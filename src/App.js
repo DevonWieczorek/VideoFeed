@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Nav from './components/Nav';
+import Feed from './modules/Feed';
 
 class App extends Component {
     componentDidMount(){
@@ -7,19 +9,14 @@ class App extends Component {
 
     render() {
         return (
-            <div className="app container">
-              <div className="col-xs-12 border-all">
-                <img src="https://via.placeholder.com/300x200.jpg"/>
-              </div>
-              <div className="col-xs-12 border-all">
-                <img src="https://via.placeholder.com/300x200.jpg"/>
-              </div>
-              <div className="col-xs-12 border-all">
-                <img src="https://via.placeholder.com/300x200.jpg"/>
-              </div>
-              <div className="col-xs-12 border-all">
-                <img src="https://via.placeholder.com/300x200.jpg"/>
-              </div>
+            <div className="app clear">
+                <Nav />
+
+                <div className="container col-sm-12 col-md-12 col-lg-10 col-xl-10 float-right clear">
+                    <div className="row col float-right">
+                        <Feed />
+                    </div>
+                </div>
             </div>
         );
     }
