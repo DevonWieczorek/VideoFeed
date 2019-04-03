@@ -1,4 +1,4 @@
-/* Styles */
+/* Globals */
 html {
   background-color: #fff;
   border-width: 1px;
@@ -219,7 +219,7 @@ html {
     clear: right;
   }
 }
-@media all and (min-width: 575px) and (max-width: 991px) {
+@media all and (min-width: 576px) and (max-width: 991px) {
   .tile.col-md-6, .tile.col-sm-6 {
     max-width: 48.5%;
   }
@@ -260,6 +260,11 @@ header.super {
   line-height: 50px;
 }
 
+.menu-toggle {
+  position: absolute;
+  top: 10px;
+}
+
 .app {
   padding-top: 50px;
 }
@@ -280,7 +285,6 @@ nav.navbar {
   position: fixed;
   bottom: 0;
   display: block;
-  width: 15%;
   padding: 0;
   background: #fff;
   overflow-x: hidden;
@@ -312,9 +316,23 @@ div#body {
   overflow: auto;
 }
 
+.feed-wrapper {
+  margin: auto;
+}
+
 @media all and (max-width: 767px) {
   nav.navbar {
     display: none;
+  }
+}
+@media all and (max-width: 991px) {
+  #logo {
+    text-align: center;
+  }
+}
+@media all and (min-width: 576px) and (max-width: 991px) {
+  .feed-wrapper.float-right {
+    display: flex;
   }
 }
 /* SnapBuilder Cards */

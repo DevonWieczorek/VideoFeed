@@ -2,7 +2,7 @@
 @import "mixins";
 @import "functions";
 
-/* Styles */
+/* Globals */
 html {
     background-color: $main-bg;
     border-width: $border-width;
@@ -183,7 +183,7 @@ html {
     }
 }
 
-@media all and (max-width: 991px) {
+@media all and (max-width: ($breakpoint-lg - 1px)) {
     .float-left,
     .float-right {
         display: unset;
@@ -223,7 +223,7 @@ html {
     }
 }
 
-@media all and (min-width: 575px) and (max-width: 991px) {
+@media all and (min-width: $breakpoint-sm) and (max-width: ($breakpoint-lg - 1px)) {
     .tile {
         &.col-md-6,
         &.col-sm-6 {
@@ -232,7 +232,7 @@ html {
     }
 }
 
-@media all and (min-width: 992px) {
+@media all and (min-width: $breakpoint-lg) {
     .tile {
         &.col-lg-4,
         &.col-xl-4 {
@@ -273,6 +273,11 @@ header.super {
     line-height: 50px;
 }
 
+.menu-toggle {
+    position: absolute;
+    top: 10px;
+}
+
 .app {
     padding-top: 50px;
 }
@@ -293,7 +298,6 @@ nav.navbar {
     position: fixed;
     bottom: 0;
     display: block;
-    width: 15%;
     padding: 0;
     background: $main-bg;
     overflow-x: hidden;
@@ -324,9 +328,24 @@ div#body {
     overflow: auto;
 }
 
-@media all and (max-width: 767px) {
+.feed-wrapper {
+    margin: auto;
+}
+@media all and (max-width: ($breakpoint-md - 1px)) {
     nav.navbar {
         display: none;
+    }
+}
+@media all and (max-width: ($breakpoint-lg - 1px)) {
+    #logo {
+        text-align: center;
+    }
+}
+@media all and (min-width: $breakpoint-sm) and (max-width: ($breakpoint-lg - 1px)) {
+    .feed-wrapper {
+        &.float-right {
+            display: flex;
+        }
     }
 }
 
@@ -387,7 +406,6 @@ div#body {
         margin-bottom: 0.25rem;
     }
 }
-
 /* 3 Dots Loader */
 .spinner {
     margin: 5px auto;
@@ -415,7 +433,6 @@ div#body {
         animation-delay: -0.16s;
     }
 }
-
 @-webkit-keyframes sk-bouncedelay {
     0%,
     100%,
@@ -440,7 +457,6 @@ div#body {
         transform: scale(1);
     }
 }
-
 /* Notification Badges */
 .alert-card {
     display: block;
@@ -463,7 +479,6 @@ div#body {
 .alert-card .card-body {
     padding: 1.25rem;
 }
-
 /* Modals */
 .modal,
 .modal-bg {

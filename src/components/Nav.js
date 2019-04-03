@@ -2,7 +2,7 @@ import React from 'react';
 
 const Nav = () => {
     return(
-        <nav className="navbar nav-left col-lg-3 col-xl-3 float-left border-right">
+        <nav className="navbar nav-left col-lg-2 col-xl-2 float-left border-right">
             <ul>
                 <li className="border-bottom">Nav 1</li>
                 <li className="border-bottom">Nav 2</li>
