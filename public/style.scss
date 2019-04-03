@@ -259,6 +259,29 @@ html {
     }
 }
 
+/* Pagination */
+.page-item {
+    .page-link {
+        color: $main-brand-color;
+    }
+
+    &:hover {
+        .page-link {
+            color: $main-brand-color;
+        }
+    }
+
+    &.active {
+        .page-link {
+            border-color: #dee2e6;
+            background-color: $main-bg;
+            color: $main-brand-color;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+    }
+}
+
 /* Frame */
 header,
 header.super {

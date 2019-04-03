@@ -246,6 +246,21 @@ html {
   text-decoration-color: red;
 }
 
+/* Pagination */
+.page-item .page-link {
+  color: red;
+}
+.page-item:hover .page-link {
+  color: red;
+}
+.page-item.active .page-link {
+  border-color: #dee2e6;
+  background-color: #fff;
+  color: red;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* Frame */
 header,
 header.super {
