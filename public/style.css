@@ -187,6 +187,22 @@ html {
     float: unset !important;
     clear: unset !important;
   }
+  .float-left.flex,
+.float-right.flex {
+    display: flex;
+  }
+  .float-left.block,
+.float-right.block {
+    display: block;
+  }
+  .float-left.inline,
+.float-right.inline {
+    display: inline;
+  }
+  .float-left.inline-block,
+.float-right.inline-block {
+    display: inline-block;
+  }
 
   .m-float-left,
 .m-float-right {
@@ -204,14 +220,12 @@ html {
   }
 }
 @media all and (min-width: 575px) and (max-width: 991px) {
-  .tile.col-md-6,
-.tile.col-sm-6 {
+  .tile.col-md-6, .tile.col-sm-6 {
     max-width: 48.5%;
   }
 }
 @media all and (min-width: 992px) {
-  .tile.col-lg-4,
-.tile.col-xl-4 {
+  .tile.col-lg-4, .tile.col-xl-4 {
     max-width: 33%;
   }
 }

@@ -189,6 +189,22 @@ html {
         display: unset;
         float: unset !important;
         clear: unset !important;
+
+        &.flex {
+            display: flex;
+        }
+
+        &.block {
+            display: block;
+        }
+
+        &.inline {
+            display: inline;
+        }
+
+        &.inline-block {
+            display: inline-block;
+        }
     }
 
     .m-float-left,
@@ -208,16 +224,20 @@ html {
 }
 
 @media all and (min-width: 575px) and (max-width: 991px) {
-    .tile.col-md-6,
-    .tile.col-sm-6 {
-        max-width: 48.5%;
+    .tile {
+        &.col-md-6,
+        &.col-sm-6 {
+            max-width: 48.5%;
+        }
     }
 }
 
 @media all and (min-width: 992px) {
-    .tile.col-lg-4,
-    .tile.col-xl-4 {
-        max-width: 33%;
+    .tile {
+        &.col-lg-4,
+        &.col-xl-4 {
+            max-width: 33%;
+        }
     }
 }
 
@@ -303,6 +323,7 @@ div#body {
     background: $main-bg;
     overflow: auto;
 }
+
 @media all and (max-width: 767px) {
     nav.navbar {
         display: none;
