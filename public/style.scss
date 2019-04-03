@@ -1,38 +1,6 @@
-/* Variables */
-$main-bg: #fff;
-$main-color: #212529;
-$main-brand-color: red;
-$border-width: 1px;
-$border-style: solid;
-$border-color: rgba(0,0,0,.15);
-$shadow-color: rgba(0,0,0,0.25);
-$default-border: #{$border-width $border-style $border-color};
-$sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-$default-viewport-width: 375px;
-
-/* Mixins */
-@mixin box-shadow($property){
-    -webkit-box-shadow: $property;
-    -moz-box-shadow: $property;
-    box-shadow: $property;
-}
-
-@mixin transform($property){
-    -webkit-transform: $property;
-    -moz-transform: $property;
-    transform: $property;
-}
-
-@mixin transition($property){
-    -webkit-transition: $property;
-    -moz-transition: $property;
-    transition: $property;
-}
-
-/* Functions */
-@function vw($pixelUnit, $viewportWidth){
-    @return ($pixelUnit / $viewportWidth) * 100
-}
+@import "variables";
+@import "mixins";
+@import "functions";
 
 /* Styles */
 html{
