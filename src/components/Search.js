@@ -1,14 +1,15 @@
 import React from 'react';
+import SearchField from "react-search-field";
 
 const Search = () => {
     return(
-        <form className="navbar-form navbar-left" role="search">
-          <div className="form-group">
-            <input type="text" className="form-control" placeholder="Search">
-          </div>
-          <button type="submit" className="btn btn-default">Submit</button>
-        </form>
+        <SearchField
+          placeholder="Search..."
+          onChange={() => {}}
+          searchText=""
+          classNames="search-bar"
+        />
     );
 }
 
-export default Search; 
+export default Search;

@@ -9,11 +9,7 @@ const MobileNav = () => {
                 <div id="logo"> Clean UI </div>
             </a>
 
-            <button className="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="dark-blue-text">
-                    <i className="fas fa-bars fa-1x"></i>
-                </span>
-            </button>
+            <button className="navbar-toggler border-top border-bottom" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"></button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent1">
                 <NavItems />

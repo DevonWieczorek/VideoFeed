@@ -341,6 +341,41 @@ nav.navbar li {
     }
 }
 
+.react-search-field {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100% !important;
+    border: none !important;
+    @include transition(0.5s all);
+
+    .react-search-field-input {
+        display: none;
+        width: calc(100% - 50px) !important;
+        height: 100% !important;
+        border-right: $default-border !important;
+        color: $main-color !important;
+    }
+
+    .react-search-field-button {
+        width: 50px !important;
+        height: 100% !important;
+        border: none !important;
+
+        svg {
+            fill: $menu-button-color !important;
+        }
+    }
+
+    &.active {
+        width: 100% !important;
+
+        .react-search-field-input {
+            display: block;
+        }
+    }
+}
+
 div#body {
     width: 100%;
     padding-top: 75px;
@@ -371,14 +406,28 @@ div#body {
 
             .navbar-toggler {
                 position: absolute;
-                top: 12px;
+                top: 18px;
                 left: 0;
+                width: 22px;
+                height: 18px;
                 padding: 0;
+                border-width: 2px !important;
+                border-radius: 0;
                 font-size: 25px;
                 color: $menu-button-color;
 
                 &:focus {
                     outline: none;
+                }
+
+                &:after {
+                    content: '';
+                    position: relative;
+                    left: -1px;
+                    display: block;
+                    width: calc(100% + 2px);
+                    height: 2px;
+                    background: $border-color;
                 }
             }
 

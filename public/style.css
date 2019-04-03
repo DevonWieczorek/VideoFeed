@@ -319,6 +319,38 @@ nav.navbar li .nav-link {
   color: #212529;
 }
 
+.react-search-field {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100% !important;
+  border: none !important;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  transition: 0.5s all;
+}
+.react-search-field .react-search-field-input {
+  display: none;
+  width: calc(100% - 50px) !important;
+  height: 100% !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.15) !important;
+  color: #212529 !important;
+}
+.react-search-field .react-search-field-button {
+  width: 50px !important;
+  height: 100% !important;
+  border: none !important;
+}
+.react-search-field .react-search-field-button svg {
+  fill: #a5a4a4 !important;
+}
+.react-search-field.active {
+  width: 100% !important;
+}
+.react-search-field.active .react-search-field-input {
+  display: block;
+}
+
 div#body {
   width: 100%;
   padding-top: 75px;
@@ -347,14 +379,27 @@ div#body {
   }
   .mobile-nav nav.navbar .navbar-toggler {
     position: absolute;
-    top: 12px;
+    top: 18px;
     left: 0;
+    width: 22px;
+    height: 18px;
     padding: 0;
+    border-width: 2px !important;
+    border-radius: 0;
     font-size: 25px;
-    color: #212529;
+    color: #a5a4a4;
   }
   .mobile-nav nav.navbar .navbar-toggler:focus {
     outline: none;
+  }
+  .mobile-nav nav.navbar .navbar-toggler:after {
+    content: "";
+    position: relative;
+    left: -1px;
+    display: block;
+    width: calc(100% + 2px);
+    height: 2px;
+    background: rgba(0, 0, 0, 0.15);
   }
   .mobile-nav nav.navbar .navbar-collapse {
     position: fixed;
