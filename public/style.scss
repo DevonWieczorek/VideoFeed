@@ -311,35 +311,33 @@ header.super {
     clear: both;
 }
 
-div#body,
 nav.navbar {
-    min-height: calc(100% - 50px);
-    float: left;
-}
-
-nav.navbar {
-    position: fixed;
-    bottom: 0;
     display: block;
     padding: 0;
     background: $main-bg;
-    overflow-x: hidden;
-    overflow-y: auto;
+
 }
 
 nav.navbar ul {
     padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 nav.navbar li {
     display: block;
     width: 100%;
-    padding: 10px 15px;
     cursor: pointer;
     list-style-type: none;
 
     &:hover {
         @include box-shadow(0 2px 15px 0 $shadow-color);
+    }
+
+    .nav-link {
+        padding: 0;
+        font-weight: 400;
+        color: $secondary-link-color;
     }
 }
 
@@ -354,20 +352,78 @@ div#body {
 .feed-wrapper {
     margin: auto;
 }
-@media all and (max-width: ($breakpoint-md - 1px)) {
-    nav.navbar {
-        display: none;
-    }
-}
+
 @media all and (max-width: ($breakpoint-lg - 1px)) {
-    #logo {
-        text-align: center;
+    .mobile-nav {
+        nav.navbar {
+            height: 100%;
+
+            .home-button,
+            .home-button #logo {
+                text-align: center;
+                color: $main-color;
+
+                &:hover {
+                    color: $main-color;
+                    text-decoration: none;
+                }
+            }
+
+            .navbar-toggler {
+                position: absolute;
+                top: 12px;
+                left: 0;
+                padding: 0;
+                font-size: 25px;
+                color: $menu-button-color;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            .navbar-collapse {
+                position: fixed;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $main-bg;
+
+                li {
+                    padding: 10px;
+                }
+
+                .nav-link {
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: $secondary-link-color;
+                }
+            }
+        }
     }
 }
+
 @media all and (min-width: $breakpoint-sm) and (max-width: ($breakpoint-lg - 1px)) {
     .feed-wrapper {
         &.float-right {
             display: flex;
+        }
+    }
+}
+
+@media all and (min-width: $breakpoint-lg) {
+    div#body,
+    nav.navbar {
+        min-height: calc(100% - 50px);
+        float: left;
+    }
+
+    nav.navbar {
+        position: fixed;
+        bottom: 0;
+
+        li {
+            padding: 10px 15px;
         }
     }
 }
