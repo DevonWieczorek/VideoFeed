@@ -384,6 +384,14 @@ nav.navbar li {
         font-weight: 400;
         color: $secondary-link-color;
     }
+
+    .panel-group {
+        .nav-item {
+            &.border-bottom:last-of-type {
+                border: none !important;
+            }
+        }
+    }
 }
 
 .react-search-field {
@@ -526,6 +534,7 @@ nav.navbar li {
     }
 
     nav.navbar {
+        width: 100%;
         height: 100%;
 
         li {
@@ -558,6 +567,12 @@ nav.navbar li {
                 }
             }
         }
+    }
+}
+
+@media all and (min-width: $breakpoint-xl) {
+    .pagination {
+        padding: 0 6.5px;
     }
 }
 

@@ -364,6 +364,9 @@ nav.navbar li .nav-link {
   font-weight: 400;
   color: #212529;
 }
+nav.navbar li .panel-group .nav-item.border-bottom:last-of-type {
+  border: none !important;
+}
 
 .react-search-field {
   position: absolute;
@@ -485,6 +488,7 @@ nav.navbar li .nav-link {
   }
 
   nav.navbar {
+    width: 100%;
     height: 100%;
   }
   nav.navbar li {
@@ -511,6 +515,11 @@ nav.navbar .react-search-field .react-search-field-input {
   }
   nav.navbar .react-search-field .react-search-field-button svg {
     width: 15px;
+  }
+}
+@media all and (min-width: 1200px) {
+  .pagination {
+    padding: 0 6.5px;
   }
 }
 /* SnapBuilder Cards */
