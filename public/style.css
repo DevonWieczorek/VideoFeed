@@ -189,41 +189,6 @@ a.secondary:hover {
   color: red;
 }
 
-/* Tiles */
-.tile {
-  margin: 0.5rem auto;
-  padding: 0;
-}
-.tile .tile-link {
-  cursor: pointer;
-}
-.tile .tile-hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: auto;
-}
-.tile .tile-info {
-  padding: 15px;
-}
-.tile .tile-info .tile-title {
-  padding-bottom: 10px;
-  font-size: 20px;
-  line-height: 26px;
-  font-weight: 600;
-}
-.tile .tile-info .tile-details {
-  font-size: 11px;
-}
-.tile .tile-info .tile-details .single-detail:nth-of-type(odd) {
-  padding-right: 5px;
-  text-align: left;
-}
-.tile .tile-info .tile-details .single-detail:nth-of-type(even) {
-  padding-left: 5px;
-  text-align: right;
-}
-
 @media all and (max-width: 991px) {
   .float-left,
 .float-right {
@@ -263,21 +228,41 @@ a.secondary:hover {
     clear: right;
   }
 }
-@media all and (min-width: 576px) and (max-width: 991px) {
-  .tile.col-md-6, .tile.col-sm-6 {
-    max-width: 48.5%;
-  }
+/* Tiles */
+.tile {
+  margin: 0.5rem auto;
+  padding: 0;
 }
-@media all and (min-width: 992px) {
-  .tile.col-lg-4 {
-    max-width: 33%;
-  }
+.tile .tile-link {
+  cursor: pointer;
 }
-@media all and (min-width: 1200px) {
-  .tile.col-xl-3 {
-    max-width: 24%;
-  }
+.tile .tile-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
 }
+.tile .tile-info {
+  padding: 15px;
+}
+.tile .tile-info .tile-title {
+  padding-bottom: 10px;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+}
+.tile .tile-info .tile-details {
+  font-size: 11px;
+}
+.tile .tile-info .tile-details .single-detail:nth-of-type(odd) {
+  padding-right: 5px;
+  text-align: left;
+}
+.tile .tile-info .tile-details .single-detail:nth-of-type(even) {
+  padding-left: 5px;
+  text-align: right;
+}
+
 /* tile hero link */
 .tile-hero-link,
 .tile-hero-link .tile-link,
@@ -295,6 +280,21 @@ a.secondary:hover {
   text-decoration-color: red;
 }
 
+@media all and (min-width: 576px) and (max-width: 991px) {
+  .tile.col-md-6, .tile.col-sm-6 {
+    max-width: 48.5%;
+  }
+}
+@media all and (min-width: 992px) {
+  .tile.col-lg-4 {
+    max-width: 33%;
+  }
+}
+@media all and (min-width: 1200px) {
+  .tile.col-xl-3 {
+    max-width: 24%;
+  }
+}
 /* Pagination */
 .page-item .page-link {
   color: red;
@@ -527,6 +527,11 @@ nav.navbar .react-search-field .react-search-field-input {
   }
 }
 @media all and (min-width: 1200px) {
+  header .react-search-field.active {
+    right: 25px;
+    width: 20% !important;
+  }
+
   .pagination {
     padding: 0 6.5px;
   }

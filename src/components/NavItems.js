@@ -14,20 +14,20 @@ const NavItems = () => {
             </BrowserView>
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item border-bottom active">
-                    <a className="nav-link" href="#">Nav 1</a>
+                    <a className="nav-link truncate" href="#">Nav 1</a>
                 </li>
                 <li className="nav-item border-bottom">
-                    <a className="nav-link" href="#">Nav 2</a>
+                    <a className="nav-link truncate" href="#">Nav 2 with very long name goes here</a>
                 </li>
                 <li className="nav-item border-bottom">
-                    <a className="nav-link" href="#">Nav 3</a>
+                    <a className="nav-link" href="#">Nav 3 also has a long name but wraps instead</a>
                 </li>
-                <li className="nav-item border-bottom">
+                <li className="nav-item border-bottom truncate">
                     <div class="panel-group">
                       <div class="panel panel-default">
                         <div class="panel-heading">
                           <div class="panel-title">
-                            <a className="nav-link" data-toggle="collapse" href="#collapse1">
+                            <a className="nav-link truncate" data-toggle="collapse" href="#collapse1">
                                 Nav with Subnav
                             </a>
                         </div>

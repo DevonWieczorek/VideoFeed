@@ -182,6 +182,46 @@ a {
     color: $main-brand-color;
 }
 
+@media all and (max-width: ($breakpoint-lg - 1px)) {
+    .float-left,
+    .float-right {
+        display: unset;
+        float: unset !important;
+        clear: unset !important;
+
+        &.flex {
+            display: flex;
+        }
+
+        &.block {
+            display: block;
+        }
+
+        &.inline {
+            display: inline;
+        }
+
+        &.inline-block {
+            display: inline-block;
+        }
+    }
+
+    .m-float-left,
+    .m-float-right {
+        display: inline-flex;
+    }
+
+    .m-float-left {
+        float: left;
+        clear: left;
+    }
+
+    .m-float-right {
+        float: right;
+        clear: right;
+    }
+}
+
 /* Tiles */
 .tile {
     margin: 0.5rem auto;
@@ -224,43 +264,21 @@ a {
     }
 }
 
-@media all and (max-width: ($breakpoint-lg - 1px)) {
-    .float-left,
-    .float-right {
-        display: unset;
-        float: unset !important;
-        clear: unset !important;
+/* tile hero link */
+.tile-hero-link,
+.tile-hero-link .tile-link,
+.tile-hero-link .tile-link:hover {
+    color: $main-color;
+    text-decoration-color: $main-color;
+    text-decoration: none;
+}
 
-        &.flex {
-            display: flex;
-        }
+.tile-hero-link .tile-title {
+    color: $main-brand-color;
 
-        &.block {
-            display: block;
-        }
-
-        &.inline {
-            display: inline;
-        }
-
-        &.inline-block {
-            display: inline-block;
-        }
-    }
-
-    .m-float-left,
-    .m-float-right {
-        display: inline-flex;
-    }
-
-    .m-float-left {
-        float: left;
-        clear: left;
-    }
-
-    .m-float-right {
-        float: right;
-        clear: right;
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: $main-brand-color;
     }
 }
 
@@ -286,24 +304,6 @@ a {
         &.col-xl-3 {
             max-width: 24%;
         }
-    }
-}
-
-/* tile hero link */
-.tile-hero-link,
-.tile-hero-link .tile-link,
-.tile-hero-link .tile-link:hover {
-    color: $main-color;
-    text-decoration-color: $main-color;
-    text-decoration: none;
-}
-
-.tile-hero-link .tile-title {
-    color: $main-brand-color;
-
-    &:hover {
-        text-decoration: underline;
-        text-decoration-color: $main-brand-color;
     }
 }
 
@@ -583,6 +583,15 @@ nav.navbar li {
 }
 
 @media all and (min-width: $breakpoint-xl) {
+    header {
+        .react-search-field {
+            &.active {
+                right: 25px;
+                width: 20% !important;
+            }
+        }
+    }
+
     .pagination {
         padding: 0 6.5px;
     }
