@@ -4,8 +4,8 @@ import NavItems from './NavItems';
 
 const Nav = () => {
     return(
-        <BrowserView viewClassName="siderail-nav">
-            <nav className="navbar web-nav nav-left col-lg-2 col-xl-2 float-left border-right">
+        <BrowserView viewClassName="siderail-nav nav-left col-lg-2 col-xl-2 float-left border-right">
+            <nav className="navbar web-nav">
                 <NavItems />
             </nav>
         </BrowserView>

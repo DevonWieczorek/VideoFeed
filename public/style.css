@@ -328,22 +328,16 @@ a.home-button:hover {
   padding-top: 50px;
 }
 
-#main {
-  min-height: calc(100vh - 70px);
-  float: none;
-  clear: both;
-}
-
 nav.navbar {
   display: block;
   padding: 0;
   background: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 nav.navbar ul {
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 nav.navbar li {
@@ -399,14 +393,6 @@ nav.navbar li .nav-link {
 }
 .react-search-field.active .react-search-field-input {
   display: block;
-}
-
-div#body {
-  width: 100%;
-  padding-top: 75px;
-  padding-left: 200px;
-  background: #fff;
-  overflow: auto;
 }
 
 .feed-wrapper {
@@ -485,15 +471,16 @@ div#body {
     border: none !important;
   }
 
-  div#body,
-nav.navbar {
+  .siderail-nav {
+    position: fixed;
+    top: 50px;
     min-height: calc(100% - 50px);
+    padding: 0;
     float: left;
   }
 
   nav.navbar {
-    position: fixed;
-    bottom: 0;
+    height: 100%;
   }
   nav.navbar li {
     padding: 10px 15px;

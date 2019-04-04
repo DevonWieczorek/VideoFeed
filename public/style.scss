@@ -325,7 +325,7 @@ header.super {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 50px;
+    height: $fixed-header-height;
     border-bottom: $default-border;
     background: $main-bg;
     font-weight: 700;
@@ -346,23 +346,16 @@ a.home-button:hover {
     padding-top: 50px;
 }
 
-#main {
-    min-height: calc(100vh - 70px);
-    float: none;
-    clear: both;
-}
-
 nav.navbar {
     display: block;
     padding: 0;
     background: $main-bg;
-
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 nav.navbar ul {
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
 }
 
 nav.navbar li {
@@ -422,14 +415,6 @@ nav.navbar li {
             display: block;
         }
     }
-}
-
-div#body {
-    width: 100%;
-    padding-top: 75px;
-    padding-left: 200px;
-    background: $main-bg;
-    overflow: auto;
 }
 
 .feed-wrapper {
@@ -525,15 +510,16 @@ div#body {
         }
     }
 
-    div#body,
-    nav.navbar {
-        min-height: calc(100% - 50px);
+    .siderail-nav {
+        position: fixed;
+        top: $fixed-header-height;
+        min-height: calc(100% - #{$fixed-header-height});
+        padding: 0;
         float: left;
     }
 
     nav.navbar {
-        position: fixed;
-        bottom: 0;
+        height: 100%;
 
         li {
             padding: 10px 15px;
