@@ -6,7 +6,7 @@ import Feed from "./modules/Feed";
 
 class App extends Component {
   componentDidMount() {
-      console.log(`Is mobile ${isMobile}`);
+    console.log(`Is mobile ${isMobile}`);
   }
 
   render() {
