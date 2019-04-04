@@ -178,6 +178,10 @@ a {
     justify-content: center;
 }
 
+.brand-color {
+    color: $main-brand-color;
+}
+
 /* Tiles */
 .tile {
     margin: 0.5rem auto;
@@ -488,12 +492,20 @@ nav.navbar li {
 
                 li {
                     padding: 10px;
-                }
 
-                .nav-link {
-                    font-size: 16px;
-                    line-height: 24px;
-                    color: $secondary-link-color;
+                    .nav-link {
+                        font-size: 16px;
+                        line-height: 24px;
+                        color: $secondary-link-color;
+                    }
+
+                    .panel-group {
+                        .nav-item {
+                            padding: 0 10px;
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+                    }
                 }
             }
         }

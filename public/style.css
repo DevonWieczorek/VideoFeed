@@ -185,6 +185,10 @@ a.secondary:hover {
   justify-content: center;
 }
 
+.brand-color {
+  color: red;
+}
+
 /* Tiles */
 .tile {
   margin: 0.5rem auto;
@@ -455,10 +459,15 @@ nav.navbar li .panel-group .nav-item.border-bottom:last-of-type {
   .mobile-nav nav.navbar .navbar-collapse li {
     padding: 10px;
   }
-  .mobile-nav nav.navbar .navbar-collapse .nav-link {
+  .mobile-nav nav.navbar .navbar-collapse li .nav-link {
     font-size: 16px;
     line-height: 24px;
     color: #212529;
+  }
+  .mobile-nav nav.navbar .navbar-collapse li .panel-group .nav-item {
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 400;
   }
 }
 @media all and (min-width: 576px) and (max-width: 991px) {
