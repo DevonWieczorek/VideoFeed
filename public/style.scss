@@ -16,6 +16,43 @@ html {
     box-sizing: border-box !important;
 }
 
+body,
+html {
+    border: none;
+}
+
+a {
+    color: $main-link-color;
+
+    &:active,
+    &:link,
+    &:visited {
+        color: $main-link-color;
+    }
+
+    &:hover {
+        color: $main-link-hover-color;
+    }
+
+    &.secondary {
+        color: $secondary-link-color;
+
+        &:active,
+        &:link,
+        &:visited {
+            color: $secondary-link-color;
+        }
+
+        &:hover {
+            color: $secondary-link-hover-color;
+        }
+    }
+}
+
+@include placeholder {
+    color: $muted-color;
+}
+
 /* Utilities */
 .clear {
     content: "";
@@ -296,6 +333,10 @@ header.super {
     line-height: 50px;
 }
 
+a.home-button:hover {
+    text-decoration: none;
+}
+
 .menu-toggle {
     position: absolute;
     top: 10px;
@@ -330,8 +371,12 @@ nav.navbar li {
     cursor: pointer;
     list-style-type: none;
 
-    &:hover {
+    &:not(.border-bottom):hover {
         @include box-shadow(0 2px 15px 0 $shadow-color);
+    }
+
+    &.border-bottom:hover {
+        border-bottom-width: 2px !important;
     }
 
     .nav-link {
@@ -347,6 +392,7 @@ nav.navbar li {
     right: 0;
     height: 100% !important;
     border: none !important;
+    font-family: $main-body-font;
     @include transition(0.5s all);
 
     .react-search-field-input {
@@ -354,7 +400,9 @@ nav.navbar li {
         width: calc(100% - 50px) !important;
         height: 100% !important;
         border-right: $default-border !important;
+        font-family: $main-body-font;
         color: $main-color !important;
+        text-transform: capitalize;
     }
 
     .react-search-field-button {
@@ -461,6 +509,22 @@ div#body {
 }
 
 @media all and (min-width: $breakpoint-lg) {
+    header {
+        .react-search-field {
+            right: 20px;
+            width: 27.5% !important;
+
+            &.active {
+                width: 27.5% !important;
+            }
+
+            .react-search-field-input {
+                display: block;
+                border: none !important;
+            }
+        }
+    }
+
     div#body,
     nav.navbar {
         min-height: calc(100% - 50px);
@@ -473,6 +537,33 @@ div#body {
 
         li {
             padding: 10px 15px;
+        }
+
+        .react-search-field {
+            position: static;
+            display: block;
+            width: 100%;
+            padding: 0 !important;
+
+            .react-search-field-button,
+            .react-search-field-input {
+                display: inline-block;
+                height: 30px !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+
+            .react-search-field-input {
+                width: calc(100% - 25px) !important;
+            }
+
+            .react-search-field-button {
+                width: 25px !important;
+
+                svg {
+                    width: 15px;
+                }
+            }
         }
     }
 }

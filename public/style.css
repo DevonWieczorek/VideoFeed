@@ -12,6 +12,46 @@ html {
   box-sizing: border-box !important;
 }
 
+body,
+html {
+  border: none;
+}
+
+a {
+  color: red;
+}
+a:active, a:link, a:visited {
+  color: red;
+}
+a:hover {
+  color: red;
+}
+a.secondary {
+  color: #212529;
+}
+a.secondary:active, a.secondary:link, a.secondary:visited {
+  color: #212529;
+}
+a.secondary:hover {
+  color: #212529;
+}
+
+::-webkit-input-placeholder {
+  color: #a5a4a4;
+}
+
+:-moz-placeholder {
+  color: #a5a4a4;
+}
+
+::-moz-placeholder {
+  color: #a5a4a4;
+}
+
+:-ms-input-placeholder {
+  color: #a5a4a4;
+}
+
 /* Utilities */
 .clear {
   content: "";
@@ -275,6 +315,10 @@ header.super {
   line-height: 50px;
 }
 
+a.home-button:hover {
+  text-decoration: none;
+}
+
 .menu-toggle {
   position: absolute;
   top: 10px;
@@ -308,10 +352,13 @@ nav.navbar li {
   cursor: pointer;
   list-style-type: none;
 }
-nav.navbar li:hover {
+nav.navbar li:not(.border-bottom):hover {
   -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.25);
+}
+nav.navbar li.border-bottom:hover {
+  border-bottom-width: 2px !important;
 }
 nav.navbar li .nav-link {
   padding: 0;
@@ -325,6 +372,7 @@ nav.navbar li .nav-link {
   right: 0;
   height: 100% !important;
   border: none !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
   transition: 0.5s all;
@@ -334,7 +382,9 @@ nav.navbar li .nav-link {
   width: calc(100% - 50px) !important;
   height: 100% !important;
   border-right: 1px solid rgba(0, 0, 0, 0.15) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #212529 !important;
+  text-transform: capitalize;
 }
 .react-search-field .react-search-field-button {
   width: 50px !important;
@@ -423,6 +473,18 @@ div#body {
   }
 }
 @media all and (min-width: 992px) {
+  header .react-search-field {
+    right: 20px;
+    width: 27.5% !important;
+  }
+  header .react-search-field.active {
+    width: 27.5% !important;
+  }
+  header .react-search-field .react-search-field-input {
+    display: block;
+    border: none !important;
+  }
+
   div#body,
 nav.navbar {
     min-height: calc(100% - 50px);
@@ -435,6 +497,28 @@ nav.navbar {
   }
   nav.navbar li {
     padding: 10px 15px;
+  }
+  nav.navbar .react-search-field {
+    position: static;
+    display: block;
+    width: 100%;
+    padding: 0 !important;
+  }
+  nav.navbar .react-search-field .react-search-field-button,
+nav.navbar .react-search-field .react-search-field-input {
+    display: inline-block;
+    height: 30px !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  nav.navbar .react-search-field .react-search-field-input {
+    width: calc(100% - 25px) !important;
+  }
+  nav.navbar .react-search-field .react-search-field-button {
+    width: 25px !important;
+  }
+  nav.navbar .react-search-field .react-search-field-button svg {
+    width: 15px;
   }
 }
 /* SnapBuilder Cards */

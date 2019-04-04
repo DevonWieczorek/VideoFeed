@@ -1,17 +1,41 @@
-@mixin box-shadow($property){
+@mixin box-shadow($property) {
     -webkit-box-shadow: $property;
     -moz-box-shadow: $property;
     box-shadow: $property;
 }
 
-@mixin transform($property){
+@mixin transform($property) {
     -webkit-transform: $property;
     -moz-transform: $property;
     transform: $property;
 }
 
-@mixin transition($property){
+@mixin transition($property) {
     -webkit-transition: $property;
     -moz-transition: $property;
     transition: $property;
+}
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root('::-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+    }
 }
