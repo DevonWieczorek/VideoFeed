@@ -271,9 +271,16 @@ a {
 
 @media all and (min-width: $breakpoint-lg) {
     .tile {
-        &.col-lg-4,
-        &.col-xl-4 {
+        &.col-lg-4 {
             max-width: 33%;
+        }
+    }
+}
+
+@media all and (min-width: $breakpoint-xl) {
+    .tile {
+        &.col-xl-3 {
+            max-width: 24%;
         }
     }
 }

@@ -265,8 +265,13 @@ a.secondary:hover {
   }
 }
 @media all and (min-width: 992px) {
-  .tile.col-lg-4, .tile.col-xl-4 {
+  .tile.col-lg-4 {
     max-width: 33%;
+  }
+}
+@media all and (min-width: 1200px) {
+  .tile.col-xl-3 {
+    max-width: 24%;
   }
 }
 /* tile hero link */
