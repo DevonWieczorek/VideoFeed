@@ -7,10 +7,6 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 
 class App extends Component {
-    clearURLParams = (path) => {
-        console.log(path)
-        this.props.history.push(path);
-    }
 
     getURLParam = (param) => {
         const urlParams = queryString.parse(this.props.location.search);
