@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserView} from "react-device-detect";
+import { NavLink } from "react-router-dom";
 import Search from "./Search";
 
 const NavItems = () => {
@@ -14,30 +15,34 @@ const NavItems = () => {
             </BrowserView>
             <ul className="navbar-nav mr-auto">
                 <li className="nav-item border-bottom active">
-                    <a className="nav-link truncate" href="#">Nav 1</a>
+                    <NavLink to="/" className="nav-link truncate" activeClassName="active">Nav 1</NavLink>
                 </li>
                 <li className="nav-item border-bottom">
-                    <a className="nav-link truncate" href="#">Nav 2 with very long name goes here</a>
+                    <NavLink to="/" className="nav-link truncate" activeClassName="active">
+                        Nav 2 with very very very long name goes here
+                    </NavLink>
                 </li>
                 <li className="nav-item border-bottom">
-                    <a className="nav-link" href="#">Nav 3 also has a long name but wraps instead</a>
+                    <NavLink to="/" className="nav-link" activeClassName="active">
+                        Nav 3 also has a very very long name but wraps instead
+                    </NavLink>
                 </li>
                 <li className="nav-item border-bottom truncate">
-                    <div class="panel-group">
-                      <div class="panel panel-default">
-                        <div class="panel-heading">
-                          <div class="panel-title">
+                    <div className="panel-group">
+                      <div className="panel panel-default">
+                        <div className="panel-heading">
+                          <div className="panel-title">
                             <a className="nav-link truncate" data-toggle="collapse" href="#collapse1">
                                 Nav with Subnav
                             </a>
                         </div>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse">
-                          <div class="panel-body">
+                        <div id="collapse1" className="panel-collapse collapse">
+                          <div className="panel-body">
                               <ul className="navbar-nav">
-                                  <li className="nav-item border-bottom truncate">Sub 1</li>
-                                  <li className="nav-item border-bottom truncate">Sub 2</li>
-                                  <li className="nav-item border-bottom truncate">Sub 3 Has a very long name</li>
+                                  <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 1</NavLink>
+                                  <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 2</NavLink>
+                                  <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 3 Has a very long name</NavLink>
                               </ul>
                           </div>
                         </div>
@@ -45,7 +50,7 @@ const NavItems = () => {
                   </div>
                 </li>
                 <li className="nav-item border-bottom">
-                    <a className="nav-link" href="#">Nav 5</a>
+                    <NavLink to="/" className="nav-link truncate" activeClassName="active">Sub 1</NavLink>
                 </li>
             </ul>
         </>

@@ -364,11 +364,11 @@ nav.navbar li.border-bottom:hover {
   border-bottom-width: 2px !important;
 }
 nav.navbar li .nav-link {
-  padding: 0;
+  padding: 5px 0;
   font-weight: 400;
   color: #212529;
 }
-nav.navbar li .panel-group .nav-item.border-bottom:last-of-type {
+nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   border: none !important;
 }
 
