@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserView} from "react-device-detect";
 import { NavLink } from "react-router-dom";
 import Search from "./Search";
+import CollapsiblePanel from "./CollapsiblePanel";
 
 const NavItems = () => {
     return(
@@ -28,26 +29,16 @@ const NavItems = () => {
                     </NavLink>
                 </li>
                 <li className="nav-item border-bottom truncate">
-                    <div className="panel-group">
-                      <div className="panel panel-default">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <a className="nav-link truncate" data-toggle="collapse" href="#collapse1">
-                                Nav with Subnav
-                            </a>
-                        </div>
-                        </div>
-                        <div id="collapse1" className="panel-collapse collapse">
-                          <div className="panel-body">
-                              <ul className="navbar-nav">
-                                  <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 1</NavLink>
-                                  <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 2</NavLink>
-                                  <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 3 Has a very long name</NavLink>
-                              </ul>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
+                    <CollapsiblePanel
+                        id="subnav1"
+                        title="Nav with Subnav"
+                    >
+                        <ul className="navbar-nav">
+                            <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 1</NavLink>
+                            <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 2</NavLink>
+                            <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 3 Has a very long name</NavLink>
+                        </ul>
+                    </CollapsiblePanel>
                 </li>
                 <li className="nav-item border-bottom">
                     <NavLink to="/" className="nav-link truncate" activeClassName="active">Sub 1</NavLink>
