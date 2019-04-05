@@ -13,7 +13,7 @@ const Feed = () => {
                     link="#"
                 >
                     <div className="row">
-                        <div className="single-detail col">21.3k Views &middot; 78.6%</div>
+                        <div className="single-detail col">21.3k Views &middot; <span className="success">78.6%</span></div>
                         <div className="single-detail col">31:24</div>
                     </div>
                 </TileHeroLink>

@@ -189,6 +189,10 @@ a.secondary:hover {
   color: red;
 }
 
+.success {
+  color: var(--success, #28a745);
+}
+
 @media all and (max-width: 991px) {
   .float-left,
 .float-right {

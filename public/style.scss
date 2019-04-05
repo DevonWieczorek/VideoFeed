@@ -182,6 +182,10 @@ a {
     color: $main-brand-color;
 }
 
+.success {
+    color: $success-color;
+}
+
 @media all and (max-width: ($breakpoint-lg - 1px)) {
     .float-left,
     .float-right {
