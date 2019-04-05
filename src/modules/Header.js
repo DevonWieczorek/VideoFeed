@@ -1,8 +1,8 @@
 import React from "react";
 import {MobileView, BrowserView} from "react-device-detect";
-import Logo from "./Logo";
-import MobileNav from "./MobileNav";
-import Search from "./Search";
+import Logo from "../components/Logo";
+import MobileNav from "../components/MobileNav";
+import Search from "../components/Search";
 
 const Header = () => {
     return (

@@ -3,7 +3,7 @@ import { isMobile } from "react-device-detect";
 import { withRouter } from "react-router-dom";
 import queryString from 'query-string'
 import Routing from "./routes/Routing";
-import Header from "./components/Header";
+import Header from "./modules/Header";
 import Nav from "./components/Nav";
 
 class App extends Component {
@@ -28,7 +28,6 @@ class App extends Component {
     }
 
     componentDidMount() {
-        console.log(`Is mobile ${isMobile}`);
         console.log(this.props);
     }
 

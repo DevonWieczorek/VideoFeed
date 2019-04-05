@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CollapsiblePanel = ({id, title, children}) => {
-    console.log({id, title, children});
     return(
         <div className="panel-group">
           <div className="panel panel-default">

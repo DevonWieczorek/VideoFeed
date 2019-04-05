@@ -59,7 +59,6 @@ class Search extends Component {
     }
 
     componentDidMount(){
-        console.log('search', this.props.match);
         this.setState({
             ...this.state,
             active: this.isActive()

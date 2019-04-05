@@ -5,9 +5,9 @@ import { Route, Switch } from "react-router-dom";
 const Routing = () => {
     return(
         <Switch>
-            <Route exact path="/" component={Feed} />
-            <Route path="/:subdir" component={Feed} />
-            <Route component={Feed} />
+            <Route exact path="/" key="/-Feed" component={Feed} />
+            <Route path="/:subdir" key="/:subdir-Feed"component={Feed} />
+            <Route key="404" component={Feed} />
         </Switch>
     );
 }
