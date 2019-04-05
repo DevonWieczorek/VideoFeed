@@ -139,11 +139,7 @@ a {
     text-overflow: ellipsis;
 }
 
-.over-1,
-.over-2,
-.over-3,
-.over-4,
-.over-5,
+*[class^="over-"],
 .super {
     position: relative;
 }
