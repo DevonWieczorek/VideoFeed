@@ -54,7 +54,7 @@ class Search extends Component {
 
     submit = () => {
         console.log('submit: ', this.state.searchString);
-        this.updateURLParams('search', this.state.searchString, true);
+        this.updateURLParams('q', this.state.searchString, true);
         this.setState({...this.state, searchString: ''});
     }
 
