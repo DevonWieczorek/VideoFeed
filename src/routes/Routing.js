@@ -1,5 +1,5 @@
 import React from 'react';
-import Feed from "../modules/Feed";
+import Feed from "../pages/Feed";
 import { Route, Switch } from "react-router-dom";
 
 const Routing = () => {

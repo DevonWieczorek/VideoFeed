@@ -1,5 +1,5 @@
 import React from 'react';
-import TileHeroLink from '../components/TileHeroLink';
+import TileHeroLink from '../modules/TileHeroLink';
 import Pagination from '../components/Pagination';
 
 const Feed = () => {

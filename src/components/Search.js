@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { isMobile } from "react-device-detect";
 import SearchField from "react-search-field";
+import { withRouter } from "react-router-dom";
+import queryString from 'query-string'
 
 class Search extends Component {
     state = {
@@ -36,12 +38,28 @@ class Search extends Component {
         }
     }
 
+    updateURLParams = (param, value, updateURL) => {
+        const url = this.props.match.url;
+        const urlParams = queryString.parse(this.props.location.search);
+        urlParams[param] = value;
+        let pathWithParams = `${url}?${queryString.stringify(urlParams)}`;
+
+        if(updateURL){
+            this.props.history.push(pathWithParams);
+        }
+        else{
+            return pathWithParams;
+        }
+    }
+
     submit = () => {
         console.log('submit: ', this.state.searchString);
+        this.updateURLParams('search', this.state.searchString, true);
         this.setState({...this.state, searchString: ''});
     }
 
     componentDidMount(){
+        console.log('search', this.props.match);
         this.setState({
             ...this.state,
             active: this.isActive()
@@ -65,4 +83,4 @@ class Search extends Component {
     }
 }
 
-export default Search;
+export default withRouter(Search);

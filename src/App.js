@@ -13,17 +13,23 @@ class App extends Component {
         return urlParams[param];
     }
 
-    updateURLParams = (param, value) => {
+    updateURLParams = (param, value, updateURL) => {
         const url = this.props.match.url;
         const urlParams = queryString.parse(this.props.location.search);
         urlParams[param] = value;
-        return `${url}?${queryString.stringify(urlParams)}`;
+        let pathWithParams = `${url}?${queryString.stringify(urlParams)}`;
+
+        if(updateURL){
+            this.props.history.push(pathWithParams);
+        }
+        else{
+            return pathWithParams;
+        }
     }
 
     componentDidMount() {
         console.log(`Is mobile ${isMobile}`);
         console.log(this.props);
-        console.log(this.getURLParam('test'));
     }
 
     render() {
