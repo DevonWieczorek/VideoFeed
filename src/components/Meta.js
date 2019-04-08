@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import MetaTags from 'react-meta-tags';
-import {updateMeta} from '../actions';
 
 class Meta extends Component {
     render(){
@@ -26,4 +25,4 @@ const mapStateToProps = (state) => {
     return {...state.meta};
 }
 
-export default connect(mapStateToProps, {updateMeta})(Meta);
+export default connect(mapStateToProps, {})(Meta);
