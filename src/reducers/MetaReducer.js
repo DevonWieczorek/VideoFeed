@@ -19,7 +19,7 @@ export default (state = INITIAL_STATE, action) => {
     switch(action.type){
         case META:
             let metaData = mergeObjects(INITIAL_STATE, action.payload);
-            return{...state, metaData}
+            return{...state, ...metaData}
 
         case RESET_META:
             return{...state, ...INITIAL_STATE}

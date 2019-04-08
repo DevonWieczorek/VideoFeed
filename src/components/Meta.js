@@ -4,6 +4,10 @@ import MetaTags from 'react-meta-tags';
 import {updateMeta} from '../actions';
 
 class Meta extends Component {
+    componentDidMount(){
+        this.props.updateMeta({'title': 'TEST'})
+    }
+
     render(){
         return(
             <MetaTags>

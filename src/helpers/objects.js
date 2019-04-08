@@ -33,10 +33,8 @@ export const getDeepObjectByKey = (obj, deepKey, val) => {
 
 export const mergeObjects = (defaultObj, argObj) => {
     let temp = {}
-
-    for(let key in argObj){
-        (argObj[key]) ? temp[key] = argObj[key] : defaultObj[key] = argObj[key];
+    for(let key in defaultObj){
+        (argObj[key]) ? temp[key] = argObj[key] : temp[key] = defaultObj[key];
     }
-
     return temp;
 }
