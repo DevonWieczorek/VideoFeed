@@ -29,6 +29,7 @@ const Feed = () => {
             <center className="clear">
                 <Pagination
                     ariaLabel="footer-pagination"
+                    onPageUpdate={() => {}}
                     lastPage="10"
                 />
             </center>
