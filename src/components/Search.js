@@ -25,7 +25,6 @@ class Search extends Component {
     }
 
     onSearchClick = (value) => {
-        console.log('search: ', value);
         if(this.state.active){
             if(this.state.searchString) this.submit();
             if(isMobile) this.setState({...this.state, active: false});
