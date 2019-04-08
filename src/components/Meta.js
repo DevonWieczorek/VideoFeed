@@ -1,15 +1,23 @@
-import React from 'react';
-import MetaTags from 'react-meta-tags'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import MetaTags from 'react-meta-tags';
+import {updateMeta} from '../actions';
 
-const Meta = () => {
-    return(
-        <MetaTags>
-            <title>VideoFeed | Clean React UI</title>
-            <meta name="description" content="Reuseable React & SASS based components" />
-            <meta property="og:title" content="VideoFeed" />
-            <meta property="og:image" content="../../public/favicon.ico" />
-        </MetaTags>
-    );
+class Meta extends Component {
+    render(){
+        return(
+            <MetaTags>
+                <title>{this.props.title}</title>
+                <meta name="description" content={this.props.description} />
+                <meta property="og:title" content={this.props.ogTitle} />
+                <meta property="og:image" content={this.props.ogImage} />
+            </MetaTags>
+        );
+    }
 }
 
-export default Meta;
+const mapStateToProps = (state) => {
+    return {...state.meta};
+}
+
+export default connect(mapStateToProps, {updateMeta})(Meta);
