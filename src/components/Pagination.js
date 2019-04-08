@@ -1,17 +1,100 @@
-import React from 'react';
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { updateURLParams, getURLParam } from "../helpers/url";
 
-const Pagination = () => {
-    return(
-        <nav aria-label="Page navigation example">
-          <ul className="pagination">
-            <li className="page-item"><a className="page-link" href="#">&laquo;</a></li>
-            <li className="active page-item"><a className="page-link" href="#">1</a></li>
-            <li className="page-item"><a className="page-link" href="#">2</a></li>
-            <li className="page-item"><a className="page-link" href="#">3</a></li>
-            <li className="page-item"><a className="page-link" href="#">&raquo;</a></li>
-          </ul>
-        </nav>
-    );
+class Pagination extends Component {
+    state = {
+        currPage: 1,
+        MAX_PAGES: 3,
+        LAST_PAGE: null
+    }
+
+    updatePage = (page) => {
+        console.log('update props', this.props)
+        switch(page){
+            case '-1':
+                let dec = this.state.currPage - 1;
+                if(dec < 1) dec = 1;
+                this.handlePageUpdate(dec);
+                break;
+            case '+1':
+                let inc = this.state.currPage + 1;
+                this.handlePageUpdate(inc);
+                break;
+            default:
+                this.handlePageUpdate(page);
+                break;
+        }
+    }
+
+    handlePageUpdate = (page) => {
+        this.setState({
+            ...this.state,
+            currPage: parseInt(page)
+        }, () => {
+            updateURLParams(this.props, "page", parseInt(page));
+            if(this.props.onPageUpdate) this.props.onPageUpdate();
+        });
+    }
+
+    dynamicPageButtons = () => {
+        const buttons = []
+        for(var i = 0; i < this.state.MAX_PAGES; i++){
+            let index = this.state.currPage + i;
+            let classNames = `page-item ${(index === this.state.currPage) ? 'active' : ''}`;
+            buttons.push(
+                <li className={`${classNames}`}>
+                  <span
+                    className="page-link"
+                    onClick={() => { this.updatePage(index); }}
+                    page={index}
+                  >{index}</span>
+                </li>
+            );
+        }
+        return buttons;
+    }
+
+    componentDidMount(){
+        // Accept current page as a prop otherwise grab it as a url param
+        let page = this.props.page || getURLParam(this.props, 'page');
+        if(page) this.updatePage(parseInt(page));
+
+        // Allow setting a limit on the number of pages
+        if(this.props.lastPage){
+            this.setState({...this.state, LAST_PAGE: parseInt(this.props.lastPage)});
+        }
+    }
+
+    render() {
+        return (
+          <nav aria-label="Page navigation example">
+            <ul className="pagination">
+              {(this.state.currPage > 1) ?
+                  <li className="page-item">
+                    <span
+                      className="page-link"
+                      onClick={() => { this.updatePage('-1'); }}
+                      page="-1"
+                    >&laquo;</span>
+                  </li>
+              : null}
+
+              {this.dynamicPageButtons()}
+
+              {(!this.state.LAST_PAGE || (this.state.currPage + (this.state.MAX_PAGES - 1) < this.state.LAST_PAGE)) ?
+                  <li className="page-item">
+                    <span
+                      className="page-link"
+                      onClick={() => { this.updatePage('+1'); }}
+                      page="+1"
+                    >&raquo;</span>
+                  </li>
+              : null}
+            </ul>
+          </nav>
+        );
+    }
 }
 
-export default Pagination;
+export default withRouter(Pagination);
