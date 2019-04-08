@@ -1,4 +1,5 @@
 import { META, RESET_META } from '../actions/types';
+import { mergeObjects } from '../helpers/objects';
 
 const INITIAL_STATE = {
     'title': 'VideoFeed | Clean React UI',
@@ -17,7 +18,8 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch(action.type){
         case META:
-            return{...state, ...action.payload}
+            let metaData = mergeObjects(INITIAL_STATE, action.payload);
+            return{...state, metaData}
 
         case RESET_META:
             return{...state, ...INITIAL_STATE}
