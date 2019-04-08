@@ -139,11 +139,7 @@ a {
     text-overflow: ellipsis;
 }
 
-.over-1,
-.over-2,
-.over-3,
-.over-4,
-.over-5,
+*[class^="over-"],
 .super {
     position: relative;
 }
@@ -180,6 +176,10 @@ a {
 
 .brand-color {
     color: $main-brand-color;
+}
+
+.success {
+    color: $success-color;
 }
 
 @media all and (max-width: ($breakpoint-lg - 1px)) {
@@ -384,13 +384,13 @@ nav.navbar li {
     }
 
     .nav-link {
-        padding: 0;
+        padding: 5px 0;
         font-weight: 400;
         color: $secondary-link-color;
     }
 
     .panel-group {
-        .nav-item {
+        .nav-link {
             &.border-bottom:last-of-type {
                 border: none !important;
             }

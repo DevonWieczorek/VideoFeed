@@ -146,11 +146,7 @@ a.secondary:hover {
   text-overflow: ellipsis;
 }
 
-.over-1,
-.over-2,
-.over-3,
-.over-4,
-.over-5,
+*[class^=over-],
 .super {
   position: relative;
 }
@@ -187,6 +183,10 @@ a.secondary:hover {
 
 .brand-color {
   color: red;
+}
+
+.success {
+  color: var(--success, #28a745);
 }
 
 @media all and (max-width: 991px) {
@@ -364,11 +364,11 @@ nav.navbar li.border-bottom:hover {
   border-bottom-width: 2px !important;
 }
 nav.navbar li .nav-link {
-  padding: 0;
+  padding: 5px 0;
   font-weight: 400;
   color: #212529;
 }
-nav.navbar li .panel-group .nav-item.border-bottom:last-of-type {
+nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   border: none !important;
 }
 
