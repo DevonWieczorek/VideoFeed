@@ -4,3 +4,4 @@
 
 // Meta
 export const META = 'meta';
+export const RESET_META = 'reset_meta';
