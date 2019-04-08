@@ -67,7 +67,7 @@ class Pagination extends Component {
 
     render() {
         return (
-          <nav aria-label="Page navigation example">
+          <nav aria-label={this.props.ariaLabel}>
             <ul className="pagination">
               {(this.state.currPage > 1) ?
                   <li className="page-item">
