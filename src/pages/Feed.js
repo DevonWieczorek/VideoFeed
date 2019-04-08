@@ -27,7 +27,10 @@ const Feed = () => {
             {renderFeed()}
 
             <center className="clear">
-                <Pagination ariaLabel="footer-pagination" lastPage="10" />
+                <Pagination
+                    ariaLabel="footer-pagination"
+                    lastPage="10"
+                />
             </center>
         </>
     );
