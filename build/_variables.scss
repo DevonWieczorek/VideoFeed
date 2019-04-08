@@ -1,0 +1,28 @@
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$default-viewport-width: 375px;
+
+$main-bg: #fff;
+$main-color: #212529;
+$main-brand-color: red;
+$muted-color: #a5a4a4;
+$shadow-color: rgba(0,0,0,0.25);
+$menu-button-color: $muted-color;
+$main-link-color: $main-brand-color;
+$main-link-hover-color: $main-brand-color;
+$secondary-link-color: $main-color;
+$secondary-link-hover-color: $main-color;
+
+$border-width: 1px;
+$border-style: solid;
+$border-color: rgba(0,0,0,.15);
+$default-border: #{$border-width $border-style $border-color};
+
+$sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$main-header-font: $sans-serif;
+$main-body-font: $sans-serif;
+
+$fixed-header-height: 50px;
