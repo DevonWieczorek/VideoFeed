@@ -10,7 +10,6 @@ class Pagination extends Component {
     }
 
     updatePage = (page) => {
-        console.log('update props', this.props)
         switch(page){
             case '-1':
                 let dec = this.state.currPage - 1;
