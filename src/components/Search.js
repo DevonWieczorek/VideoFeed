@@ -40,7 +40,11 @@ class Search extends Component {
     submit = () => {
         console.log('submit: ', this.state.searchString);
         updateURLParams(this.props, 'q', this.state.searchString);
-        this.setState({...this.state, searchString: ''});
+        this.setState({
+            ...this.state, 
+            searchString: '',
+            active: (isMobile) ? false : true
+        });
     }
 
     componentDidMount(){
