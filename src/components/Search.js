@@ -40,7 +40,6 @@ class Search extends Component {
     }
 
     submit = () => {
-        console.log('submit: ', this.state.searchString);
         updateURLParams(this.props, 'q', this.state.searchString);
 
         this.setState({
@@ -48,7 +47,7 @@ class Search extends Component {
             searchString: '',
             active: (isMobile) ? false : true
         }, () => {
-            // Wait for URL to update then make the API call 
+            // Wait for URL to update then make the API call
             this.props.getData(this.props.location.search);
         });
     }
