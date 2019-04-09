@@ -296,6 +296,11 @@ a.secondary:hover {
   }
 }
 /* Pagination */
+nav.pagination-holder {
+  display: inline-block;
+  margin: auto;
+}
+
 .page-item .page-link {
   color: red;
 }

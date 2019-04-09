@@ -1,3 +1,9 @@
-@function vw($pixelUnit, $viewportWidth){
-    @return ($pixelUnit / $viewportWidth) * 100
+@function vw($pixelUnit, $viewportWidth, $maxPixelUnit) {
+    $calculated: ($pixelUnit / $viewportWidth) * 100;
+
+    @if $maxPixelUnit and $calculated > $maxPixelUnit {
+        @return #{$maxPixelUnit}px;
+    } @else {
+        @return #{$calculated}vw;
+    }
 }
