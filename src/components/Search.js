@@ -42,6 +42,7 @@ class Search extends Component {
     submit = () => {
         updateURLParams(this.props, 'q', this.state.searchString);
 
+        // Clear field and toggle search bar 
         this.setState({
             ...this.state,
             searchString: '',
