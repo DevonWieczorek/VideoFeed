@@ -5,3 +5,7 @@
 // Meta
 export const META = 'meta';
 export const RESET_META = 'reset_meta';
+
+// API
+export const BASE_DOMAIN = 'https://videofeed-api-git-master.devonwieczorek93.now.sh/';
+export const GET_DATA = 'get_data';

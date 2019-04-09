@@ -60,7 +60,7 @@ class Pagination extends Component {
         if(page) this.updatePage(parseInt(page));
 
         // Allow setting a limit on the number of pages
-        if(this.props.lastPage){
+        if(this.props.lastPage && (this.props.currPage <= this.props.lastPage)){
             this.setState({...this.state, LAST_PAGE: parseInt(this.props.lastPage)});
         }
     }
