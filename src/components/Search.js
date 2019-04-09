@@ -13,6 +13,7 @@ class Search extends Component {
         searchString: ''
     }
 
+    // Control visibility of search field 
     classString = () => {
         return `search-bar ${(this.state.active) ? 'active' : 'hidden'}`;
     }
@@ -22,6 +23,7 @@ class Search extends Component {
     }
 
     isActive = () => {
+        // Web is always active, mobile toggles
         if(!isMobile){ return true; }
         else{ return this.state.active; }
     }
@@ -42,7 +44,7 @@ class Search extends Component {
     submit = () => {
         updateURLParams(this.props, 'q', this.state.searchString);
 
-        // Clear field and toggle search bar 
+        // Clear field and toggle search bar
         this.setState({
             ...this.state,
             searchString: '',
