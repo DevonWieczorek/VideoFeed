@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { isMobile } from "react-device-detect";
 import SearchField from "react-search-field";
 import { withRouter } from "react-router-dom";
 import {updateURLParams} from "../helpers/url";
+import {getData} from "../actions";
 
 class Search extends Component {
     state = {
@@ -40,10 +42,14 @@ class Search extends Component {
     submit = () => {
         console.log('submit: ', this.state.searchString);
         updateURLParams(this.props, 'q', this.state.searchString);
+
         this.setState({
-            ...this.state, 
+            ...this.state,
             searchString: '',
             active: (isMobile) ? false : true
+        }, () => {
+            // Wait for URL to update then make the API call 
+            this.props.getData(this.props.location.search);
         });
     }
 
@@ -71,4 +77,8 @@ class Search extends Component {
     }
 }
 
-export default withRouter(Search);
+const mapStateToProps = (state) => {
+    return {...state.meta};
+}
+
+export default connect(mapStateToProps, {getData})(withRouter(Search));
