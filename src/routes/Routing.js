@@ -7,7 +7,7 @@ const Routing = () => {
     return(
         <Switch>
             <Route exact path="/" key="homeFeed" component={Feed} />
-            <Route path="/:brand" key="brandFeed"component={Feed} />
+            <Route path="/:brand" key="brand" component={Feed} />
             <Route key="404" component={NotFound} />
         </Switch>
     );

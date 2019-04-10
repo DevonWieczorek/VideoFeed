@@ -1,8 +1,9 @@
 import React from 'react';
 import TileHeroLink from '../modules/TileHeroLink';
 import Pagination from '../components/Pagination';
+import {randomNumber, abbvNumber} from '../helpers/misc';
 
-const Feed = () => {
+const Feed = (props) => {
     const renderFeed = () => {
         let items = [];
         for(var i = 0; i < 12; i++){
@@ -13,7 +14,7 @@ const Feed = () => {
                     link="#"
                 >
                     <div className="row">
-                        <div className="single-detail col">21.3k Views &middot; <span className="success">78.6%</span></div>
+                        <div className="single-detail col">{abbvNumber(randomNumber(10000, 76526173))} Views &middot; <span className="success">78.6%</span></div>
                         <div className="single-detail col">31:24</div>
                     </div>
                 </TileHeroLink>
