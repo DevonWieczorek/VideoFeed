@@ -7,7 +7,7 @@ const ParamLink = (props) => {
     const urlParam = getURLParam(props, props.param);
 
     // Preserve the active path and then update the query param
-    const preserveLocationUpdateParams = () => {
+    const preservePathUpdateParams = () => {
         props.match.url = props.location.pathname;
         props.history.push(updatedURLParamString(props, props.param, props.value));
     }
@@ -15,7 +15,7 @@ const ParamLink = (props) => {
     return(
         <div
             className={(urlParam === props.value) ? `${props.className} ${props.activeClassName}` : props.className}
-            onClick={() => {preserveLocationUpdateParams()}}
+            onClick={() => {preservePathUpdateParams()}}
         >
             {props.children}
         </div>
