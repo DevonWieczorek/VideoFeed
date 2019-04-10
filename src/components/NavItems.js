@@ -16,6 +16,11 @@ const NavItems = () => {
                 </ul>
             </BrowserView>
             <ul className="navbar-nav mr-auto">
+                <li className="nav-item border-bottom active">
+                    <NavLink to="/" className="nav-link truncate" activeClassName="active">
+                        Home Feed
+                    </NavLink>
+                </li>
                 <li className="nav-item border-bottom truncate">
                     <CollapsiblePanel
                         id="brands-accordion"
@@ -34,10 +39,18 @@ const NavItems = () => {
                         title="Categories"
                     >
                         <ul className="navbar-nav">
-                            <ParamLink className="nav-link border-bottom truncate" param="category" value="sports">Sports</ParamLink>
-                            <ParamLink className="nav-link border-bottom truncate" param="category" value="comedy">Comedy</ParamLink>
-                            <ParamLink className="nav-link border-bottom truncate" param="category" value="action">Action</ParamLink>
-                            <ParamLink className="nav-link border-bottom truncate" param="category" value="live">Live</ParamLink>
+                            <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" value="sports">
+                                Sports
+                            </ParamLink>
+                            <ParamLink className="nav-link border-bottom truncate"activeClassName="active"  param="category" value="comedy">
+                                Comedy
+                            </ParamLink>
+                            <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" value="action">
+                                Action
+                            </ParamLink>
+                            <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" value="live">
+                                Live
+                            </ParamLink>
                         </ul>
                     </CollapsiblePanel>
                 </li>
