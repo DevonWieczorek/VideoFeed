@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import {getURLParam, updatedURLParamString} from '../helpers/url';
 
 const ParamLink = (props) => {
@@ -11,6 +12,21 @@ const ParamLink = (props) => {
         props.match.url = props.location.pathname;
         props.history.push(updatedURLParamString(props, props.param, props.value));
     }
+
+    /*
+        // Results in youtube?/?caregory=test&page=1&q=query
+        // Beacause of updatedURLParamString()
+        <NavLink
+            to={{
+                pathname: props.location.pathname,
+                search: updatedURLParamString(props, props.param, props.value)
+            }}
+            className={props.className}
+            activeClassName={props.activeClassName}
+        >
+            {props.children}
+        </NavLink>
+    */
 
     return(
         <div
