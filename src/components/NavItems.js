@@ -54,34 +54,6 @@ const NavItems = () => {
                         </ul>
                     </CollapsiblePanel>
                 </li>
-                <li className="nav-item border-bottom active">
-                    <NavLink to="/" className="nav-link truncate" activeClassName="active">Nav 1</NavLink>
-                </li>
-                <li className="nav-item border-bottom">
-                    <NavLink to="/" className="nav-link truncate" activeClassName="active">
-                        Nav 2 with very very very long name goes here
-                    </NavLink>
-                </li>
-                <li className="nav-item border-bottom">
-                    <NavLink to="/" className="nav-link" activeClassName="active">
-                        Nav 3 also has a very very long name but wraps instead
-                    </NavLink>
-                </li>
-                <li className="nav-item border-bottom truncate">
-                    <CollapsiblePanel
-                        id="subnav1"
-                        title="Nav with Subnav"
-                    >
-                        <ul className="navbar-nav">
-                            <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 1</NavLink>
-                            <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 2</NavLink>
-                            <NavLink to="/" className="nav-link border-bottom truncate" activeClassName="active">Sub 3 Has a very long name</NavLink>
-                        </ul>
-                    </CollapsiblePanel>
-                </li>
-                <li className="nav-item border-bottom">
-                    <NavLink to="/" className="nav-link truncate" activeClassName="active">Sub 1</NavLink>
-                </li>
             </ul>
         </>
     );
