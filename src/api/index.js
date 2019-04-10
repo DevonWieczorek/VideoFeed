@@ -27,6 +27,25 @@ app.get("/", (req, res, next) => {
     res.json(queryObj);
 });
 
+app.get("/:brand", (req, res, next) => {
+    let brand = req.params.brand;
+    let page = req.query.page;
+    let search = req.query.q;
+    let category = req.query.category;
+    let concatQueries = `/${brand}/?search=${search}&page=${page}&category=${category}`;
+    let queryObj = {
+        'brand': brand,
+        'page': page,
+        'search': search,
+        'category': category,
+        'queryString': encodeURIComponent(concatQueries)
+    };
+
+    // Send back the response
+    res.status(200);
+    res.json(queryObj);
+});
+
 app.post('/', function(request, response) {
     // Send back the response
     response.status(200);
