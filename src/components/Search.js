@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { isMobile } from "react-device-detect";
 import SearchField from "react-search-field";
 import { withRouter } from "react-router-dom";
-import {updateURLParams} from "../helpers/url";
+import {updateURLParams, updatedURLParamString} from "../helpers/url";
 import {getData} from "../actions";
 
 class Search extends Component {
@@ -13,7 +13,7 @@ class Search extends Component {
         searchString: ''
     }
 
-    // Control visibility of search field 
+    // Control visibility of search field
     classString = () => {
         return `search-bar ${(this.state.active) ? 'active' : 'hidden'}`;
     }
@@ -41,8 +41,15 @@ class Search extends Component {
         }
     }
 
+    // Preserve the active path and then update the query param
+    preserveLocationUpdateParams = () => {
+        this.props.match.url = this.props.location.pathname;
+        this.props.history.push(updatedURLParamString(this.props, 'q', this.state.searchString));
+    }
+
     submit = () => {
-        updateURLParams(this.props, 'q', this.state.searchString);
+        // updateURLParams(this.props, 'q', this.state.searchString);
+        this.preserveLocationUpdateParams();
 
         // Clear field and toggle search bar
         this.setState({
