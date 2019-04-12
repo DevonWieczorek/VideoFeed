@@ -1,4 +1,4 @@
-const vimeo = {
+export const vimeo = {
     brandName: "vimeo",
     logo:
         "https://prowly-uploads.s3.eu-west-1.amazonaws.com/uploads/PressRoom/563/cover_photo/large_slack-imgs.com.png",
@@ -7,5 +7,3 @@ const vimeo = {
     category: "",
     queryString: ""
 };
-
-export default vimeo;

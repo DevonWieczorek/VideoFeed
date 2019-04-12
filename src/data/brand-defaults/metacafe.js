@@ -1,4 +1,4 @@
-const metacafe = {
+export const metacafe = {
     brandName: "metacafe",
     logo: "https://logonoid.com/images/metacafe-logo.png",
     page: 1,
@@ -6,5 +6,3 @@ const metacafe = {
     category: "",
     queryString: ""
 };
-
-export default metacafe;
