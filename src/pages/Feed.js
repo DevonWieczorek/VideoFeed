@@ -1,7 +1,9 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 import TileHeroLink from '../modules/TileHeroLink';
 import Pagination from '../components/Pagination';
 import {randomNumber, abbvNumber} from '../helpers/misc';
+import { getURLParam } from "../helpers/url";
 
 const Feed = (props) => {
     const renderFeed = () => {
@@ -31,6 +33,7 @@ const Feed = (props) => {
                 <Pagination
                     ariaLabel="footer-pagination"
                     onPageUpdate={() => {}}
+                    page={getURLParam(props, 'page')}
                     lastPage="10"
                 />
             </center>
@@ -38,4 +41,4 @@ const Feed = (props) => {
     );
 }
 
-export default Feed;
+export default withRouter(Feed);

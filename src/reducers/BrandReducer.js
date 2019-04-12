@@ -2,11 +2,8 @@ import {
     DEFAULT_BRAND,
     RESET_BRAND,
     RESET_ALL_BRANDS,
-    UPDATE_BRAND_PAGE,
-    UPDATE_BRAND_SEARCH,
-    UPDATE_BRAND_CATEGORY,
-    UPDATE_BRAND_QUERY_STRING,
-    UPDATE_ACTIVE_BRAND
+    UPDATE_ACTIVE_BRAND,
+    UPDATE_ALL_BRAND_INFO
 } from '../actions/types';
 import * as brands from '../data/brand-defaults';
 
@@ -37,46 +34,22 @@ export default (state = INITIAL_STATE, action) => {
                 queryString: state.providers[action.payload].queryString
             }
 
-        case UPDATE_BRAND_PAGE:
+        case UPDATE_ALL_BRAND_INFO:
             return{
                 ...state,
-                page: action.payload,
+                activeBrand: action.payload.activeBrand,
+                page: action.payload.page,
+                search: action.payload.search,
+                category: action.payload.category,
+                queryString: action.payload.queryString,
                 providers: {
-                    [state.activeBrand]: {
-                        page: action.payload
-                    }
-                }
-            }
-
-        case UPDATE_BRAND_SEARCH:
-            return{
-                ...state,
-                search: action.payload,
-                providers: {
-                    [state.activeBrand]: {
-                        search: action.payload
-                    }
-                }
-            }
-
-        case UPDATE_BRAND_CATEGORY:
-            return{
-                ...state,
-                category: action.payload,
-                providers: {
-                    [state.activeBrand]: {
-                        category: action.payload
-                    }
-                }
-            }
-
-        case UPDATE_BRAND_QUERY_STRING:
-            return{
-                ...state,
-                queryString: action.payload,
-                providers: {
-                    [state.activeBrand]: {
-                        queryString: action.payload
+                    ...state.providers,
+                    [action.payload.activeBrand]: {
+                        ...state.providers[action.payload.activeBrand],
+                        page: action.payload.page,
+                        search: action.payload.search,
+                        category: action.payload.category,
+                        queryString: action.payload.queryString
                     }
                 }
             }

@@ -26,13 +26,14 @@ class Pagination extends Component {
         }
     }
 
-    handlePageUpdate = (page) => {
+    handlePageUpdate = (page, INITIAL = false) => {
         this.setState({
             ...this.state,
             currPage: parseInt(page)
         }, () => {
             updateURLParams(this.props, "page", parseInt(page));
-            if(this.props.onPageUpdate) this.props.onPageUpdate();
+            // INITIAL flag was added to prevent unintentional callback on page load
+            if(!INITIAL && this.props.onPageUpdate) this.props.onPageUpdate();
         });
     }
 
@@ -56,8 +57,8 @@ class Pagination extends Component {
 
     componentDidMount(){
         // Accept current page as a prop otherwise grab it as a url param
-        let page = this.props.page || getURLParam(this.props, 'page');
-        if(page) this.updatePage(parseInt(page));
+        let page = this.props.page || getURLParam(this.props, 'page') || 1;
+        this.setState({ ...this.state, currPage: parseInt(page) });
 
         // Allow setting a limit on the number of pages
         if(this.props.lastPage && (this.props.currPage <= this.props.lastPage)){

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { isMobile } from "react-device-detect";
 import SearchField from "react-search-field";
 import { withRouter } from "react-router-dom";
-import {updateURLParams, updatedURLParamString} from "../helpers/url";
+import {updatedURLParamString} from "../helpers/url";
 import {getData} from "../actions";
 
 class Search extends Component {
@@ -48,7 +48,6 @@ class Search extends Component {
     }
 
     submit = () => {
-        // updateURLParams(this.props, 'q', this.state.searchString);
         this.preservePathUpdateParams();
 
         // Clear field and toggle search bar
@@ -90,4 +89,4 @@ const mapStateToProps = (state) => {
     return {...state.meta};
 }
 
-export default connect(mapStateToProps, {getData})(withRouter(Search));
+export default connect(mapStateToProps, { getData })(withRouter(Search));
