@@ -29,7 +29,7 @@ const NavItems = () => {
                         <ul className="navbar-nav">
                             <NavLink to="/youtube" className="nav-link border-bottom truncate" activeClassName="active">Youtube</NavLink>
                             <NavLink to="/vimeo" className="nav-link border-bottom truncate" activeClassName="active">Vimeo</NavLink>
-                            <NavLink to="/twitch" className="nav-link border-bottom truncate" activeClassName="active">Twitch</NavLink>
+                            <NavLink to="/metacafe" className="nav-link border-bottom truncate" activeClassName="active">Metacafe</NavLink>
                         </ul>
                     </CollapsiblePanel>
                 </li>
