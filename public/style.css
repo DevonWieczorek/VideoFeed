@@ -481,6 +481,14 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   }
 }
 @media all and (min-width: 992px) {
+  header div * {
+    display: inline-block;
+  }
+  header div #partner-logo {
+    float: right;
+    height: 90%;
+    padding-right: 15px;
+  }
   header .react-search-field {
     right: 20px;
     width: 27.5% !important;

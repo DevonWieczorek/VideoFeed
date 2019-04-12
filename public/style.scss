@@ -527,6 +527,18 @@ nav.navbar li {
 
 @media all and (min-width: $breakpoint-lg) {
     header {
+        div {
+            * {
+                display: inline-block;
+            }
+
+            #partner-logo {
+                float: right;
+                height: 90%;
+                padding-right: 15px;
+            }
+        }
+
         .react-search-field {
             right: 20px;
             width: 27.5% !important;

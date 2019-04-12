@@ -5,11 +5,11 @@ import queryString from 'query-string';
 import Feed from '../pages/Feed';
 import NotFound from '../pages/NotFound';
 import ErrorBoundary from '../components/ErrorBoundary';
-import {updateAllBrandInfo} from '../actions';
+import {updateAllBrandInfo, updateActiveBrand} from '../actions';
 import {DEFAULT_BRAND} from '../actions/types';
 
 class Routing extends Component {
-    // Listen for changes in the URL params and update the state accordingly 
+    // Listen for changes in the URL params and update the state accordingly
     onRouteChanged(){
         let {match, location} = this.props;
         let urlParams = queryString.parse(this.props.location.search);
@@ -21,6 +21,7 @@ class Routing extends Component {
             category: urlParams['category'] || '',
             queryString: location.search || ''
         });
+        this.props.updateActiveBrand(match.params.brand || location.pathname.split('/')[1] || DEFAULT_BRAND)
     }
 
     componentDidUpdate(prevProps) {
@@ -60,4 +61,4 @@ const mapStateToProps = (state) => {
     return{ ...state.brands};
 }
 
-export default connect(mapStateToProps, {updateAllBrandInfo})(withRouter(Routing));
+export default connect(mapStateToProps, {updateAllBrandInfo, updateActiveBrand})(withRouter(Routing));
