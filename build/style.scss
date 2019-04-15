@@ -404,6 +404,7 @@ nav.navbar li {
 }
 
 .react-search-field {
+    z-index: 9999999;
     position: absolute;
     top: 0;
     right: 0;
@@ -532,10 +533,16 @@ nav.navbar li {
                 display: inline-block;
             }
 
-            #partner-logo {
-                float: right;
-                height: 90%;
+            .dynamic-partner-logo {
+                display: inline-flex;
+                align-items: center;
+                height: 100%;
                 padding-right: 15px;
+                float: right;
+            }
+
+            #partner-logo {
+                height: 90%;
             }
         }
 
