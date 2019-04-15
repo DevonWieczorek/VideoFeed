@@ -484,10 +484,15 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   header div * {
     display: inline-block;
   }
-  header div #partner-logo {
-    float: right;
-    height: 90%;
+  header div .dynamic-partner-logo {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
     padding-right: 15px;
+    float: right;
+  }
+  header div #partner-logo {
+    height: 90%;
   }
   header .react-search-field {
     right: 20px;
