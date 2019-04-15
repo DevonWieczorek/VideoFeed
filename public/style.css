@@ -378,6 +378,7 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
 }
 
 .react-search-field {
+  z-index: 9999999;
   position: absolute;
   top: 0;
   right: 0;

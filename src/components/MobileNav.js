@@ -8,7 +8,7 @@ const MobileNav = () => {
 
             <Logo />
 
-            <button className="navbar-toggler border-top border-bottom" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"></button>
+            <button className="navbar-toggler border-top border-bottom over-5" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"></button>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent1">
                 <NavItems />

@@ -404,6 +404,7 @@ nav.navbar li {
 }
 
 .react-search-field {
+    z-index: 9999999;
     position: absolute;
     top: 0;
     right: 0;
