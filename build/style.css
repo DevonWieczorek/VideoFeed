@@ -395,6 +395,8 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   height: 100% !important;
   border-right: 1px solid rgba(0, 0, 0, 0.15) !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px !important;
+  line-height: 50px;
   color: #212529 !important;
   text-transform: capitalize;
 }
@@ -532,6 +534,7 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
 nav.navbar .react-search-field .react-search-field-input {
     display: inline-block;
     height: 30px !important;
+    line-height: 30px;
     padding: 0 !important;
     border: none !important;
   }
