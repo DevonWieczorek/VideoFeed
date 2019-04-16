@@ -44,7 +44,7 @@ class Routing extends Component {
                         </ErrorBoundary>
                     );
                 }} />
-            <Route exact path="/404" key="404" component={NotFound} />
+                <Route exact path="/404" key="404" component={NotFound} />
                 <Route path="/:brand" key="brand" component={() => {
                     return(
                         <ErrorBoundary errorContent={<NotFound/>}>

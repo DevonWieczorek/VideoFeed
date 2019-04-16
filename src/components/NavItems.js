@@ -3,6 +3,8 @@ import {BrowserView} from "react-device-detect";
 import { NavLink } from "react-router-dom";
 import Search from "./Search";
 import ParamLink from "./ParamLink";
+import BrandsList from "./BrandsList";
+import CategoriesList from "./CategoriesList";
 import CollapsiblePanel from "./CollapsiblePanel";
 
 const NavItems = () => {
@@ -26,11 +28,7 @@ const NavItems = () => {
                         id="brands-accordion"
                         title="Brands"
                     >
-                        <ul className="navbar-nav">
-                            <NavLink to="/youtube" className="nav-link border-bottom truncate" activeClassName="active">Youtube</NavLink>
-                            <NavLink to="/vimeo" className="nav-link border-bottom truncate" activeClassName="active">Vimeo</NavLink>
-                            <NavLink to="/metacafe" className="nav-link border-bottom truncate" activeClassName="active">Metacafe</NavLink>
-                        </ul>
+                        <BrandsList />
                     </CollapsiblePanel>
                 </li>
                 <li className="nav-item border-bottom truncate">
@@ -38,20 +36,7 @@ const NavItems = () => {
                         id="categories-accordion"
                         title="Categories"
                     >
-                        <ul className="navbar-nav">
-                            <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" value="sports">
-                                Sports
-                            </ParamLink>
-                            <ParamLink className="nav-link border-bottom truncate"activeClassName="active"  param="category" value="comedy">
-                                Comedy
-                            </ParamLink>
-                            <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" value="action">
-                                Action
-                            </ParamLink>
-                            <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" value="live">
-                                Live
-                            </ParamLink>
-                        </ul>
+                        <CategoriesList />
                     </CollapsiblePanel>
                 </li>
             </ul>

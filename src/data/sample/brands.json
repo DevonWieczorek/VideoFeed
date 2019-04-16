@@ -1,0 +1,15 @@
+{
+    "brands": [{
+            "id": 1,
+            "brand": "Youtube"
+        },
+        {
+            "id": 2,
+            "brand": "Vimeo"
+        },
+        {
+            "id": 3,
+            "brand": "Metacafe"
+        }
+    ]
+}
