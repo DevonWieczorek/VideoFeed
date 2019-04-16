@@ -76,6 +76,7 @@ class Pagination extends Component {
                       className="page-link"
                       onClick={() => { this.updatePage('-1'); }}
                       page="-1"
+                      rel="previous"
                     >&laquo;</span>
                   </li>
               : null}
@@ -88,6 +89,7 @@ class Pagination extends Component {
                       className="page-link"
                       onClick={() => { this.updatePage('+1'); }}
                       page="+1"
+                      rel="next"
                     >&raquo;</span>
                   </li>
               : null}

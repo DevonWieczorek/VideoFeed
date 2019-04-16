@@ -446,6 +446,9 @@ nav.navbar li .nav-link {
   font-weight: 400;
   color: #212529;
 }
+nav.navbar li .nav-link.active {
+  color: red;
+}
 nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   border: none !important;
 }

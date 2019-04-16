@@ -10,14 +10,14 @@ const NavItems = () => {
         <>
             <BrowserView>
                 <ul className="navbar-nav mr-auto">
-                    <li className="nav-item border-bottom active">
+                    <li className="nav-item border-bottom">
                         <Search />
                     </li>
                 </ul>
             </BrowserView>
             <ul className="navbar-nav mr-auto">
-                <li className="nav-item border-bottom active">
-                    <NavLink to="/" className="nav-link truncate" activeClassName="active">
+                <li className="nav-item border-bottom">
+                    <NavLink to="/" className="nav-link truncate" activeClassName="default">
                         Home Feed
                     </NavLink>
                 </li>

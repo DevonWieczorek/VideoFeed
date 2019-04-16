@@ -393,6 +393,10 @@ nav.navbar li {
         padding: 5px 0;
         font-weight: 400;
         color: $secondary-link-color;
+
+        &.active {
+            color: $main-brand-color;
+        }
     }
 
     .panel-group {
