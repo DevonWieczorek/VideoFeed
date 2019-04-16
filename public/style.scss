@@ -450,6 +450,17 @@ nav.navbar li {
     }
 }
 
+.not-found {
+    padding: 25px;
+
+    .react-search-field {
+        position: static;
+        height: 35px !important;
+        margin-top: 20px;
+        border: $default-border !important;
+    }
+}
+
 .feed-wrapper {
     margin: auto;
 }

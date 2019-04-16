@@ -492,6 +492,16 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   display: block;
 }
 
+.not-found {
+  padding: 25px;
+}
+.not-found .react-search-field {
+  position: static;
+  height: 35px !important;
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
 .feed-wrapper {
   margin: auto;
 }
