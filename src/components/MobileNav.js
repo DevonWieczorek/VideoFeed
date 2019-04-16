@@ -8,10 +8,10 @@ class MobileNav extends Component {
 
     toggleOpen = (force) => {
         if(typeof force !== 'undefined'){
-            this.setState({...this.state, isOpen: force}, () => {console.log(this.state)});
+            this.setState({...this.state, isOpen: force});
         }
         else{
-            this.setState({...this.state, isOpen: !this.state.isOpen}, () => {console.log(this.state)});
+            this.setState({...this.state, isOpen: !this.state.isOpen});
         }
     }
 
