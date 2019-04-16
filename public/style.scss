@@ -418,8 +418,9 @@ nav.navbar li {
         width: calc(100% - 50px) !important;
         height: 100% !important;
         border-right: $default-border !important;
-        font-size: 16px !important;
         font-family: $main-body-font;
+        font-size: 16px !important;
+        line-height: $fixed-header-height;
         color: $main-color !important;
         text-transform: capitalize;
     }
@@ -588,6 +589,7 @@ nav.navbar li {
             .react-search-field-input {
                 display: inline-block;
                 height: 30px !important;
+                line-height: 30px;
                 padding: 0 !important;
                 border: none !important;
             }
