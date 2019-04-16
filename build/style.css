@@ -466,6 +466,7 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   display: none;
   width: calc(100% - 50px) !important;
   height: 100% !important;
+  padding: 0 10px !important;
   border-right: 1px solid rgba(0, 0, 0, 0.15) !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 16px !important;
