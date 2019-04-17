@@ -26,7 +26,6 @@ export default (state = INITIAL_STATE, action) => {
     console.log('brand reducer:', action.type, action.payload);
     switch(action.type){
         case UPDATE_ACTIVE_BRAND:
-            console.log(state.providers[action.payload].logo);
             return{
                 ...state,
                 activeBrand: action.payload,
@@ -38,24 +37,6 @@ export default (state = INITIAL_STATE, action) => {
             }
 
         case UPDATE_ALL_BRAND_INFO:
-            console.log({
-                ...state,
-                activeBrand: action.payload.activeBrand,
-                page: action.payload.page,
-                search: action.payload.search,
-                category: action.payload.category,
-                queryString: action.payload.queryString,
-                providers: {
-                    ...state.providers,
-                    [action.payload.activeBrand]: {
-                        ...state.providers[action.payload.activeBrand],
-                        page: action.payload.page,
-                        search: action.payload.search,
-                        category: action.payload.category,
-                        queryString: action.payload.queryString
-                    }
-                }
-            });
             return{
                 ...state,
                 activeBrand: action.payload.activeBrand,
@@ -76,16 +57,6 @@ export default (state = INITIAL_STATE, action) => {
             }
 
         case UPDATE_BRAND_ATTRIBUTE:
-            console.log({
-                ...state,
-                providers: {
-                    ...state.providers,
-                    [action.payload.brand]: {
-                        ...state.providers[action.payload.brand],
-                        [action.payload.attribute]: action.payload.value
-                    }
-                }
-            })
             return{
                 ...state,
                 providers: {
