@@ -360,7 +360,7 @@ a.home-button:hover {
 }
 
 .app {
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
 nav.navbar {
@@ -478,6 +478,10 @@ nav.navbar li {
 }
 
 @media all and (max-width: ($breakpoint-lg - 1px)) {
+    .app {
+        padding-top: 40px;
+    }
+
     .mobile-nav {
         nav.navbar {
             height: 100%;

@@ -412,7 +412,7 @@ a.home-button:hover {
 }
 
 .app {
-  padding-top: 40px;
+  padding-top: 50px;
 }
 
 nav.navbar {
@@ -518,6 +518,10 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
 }
 
 @media all and (max-width: 991px) {
+  .app {
+    padding-top: 40px;
+  }
+
   .mobile-nav nav.navbar {
     height: 100%;
   }
