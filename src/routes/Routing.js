@@ -18,10 +18,11 @@ class Routing extends Component {
     onRouteChanged = () =>{
         let {match, location} = this.props;
         let urlParams = queryString.parse(this.props.location.search);
+        let activeBrand = match.params.brand || location.pathname.split('/')[1] || DEFAULT_BRAND;
 
         // Update the global brand info
         this.props.updateAllBrandInfo({
-            activeBrand: match.params.brand || location.pathname.split('/')[1] || DEFAULT_BRAND,
+            activeBrand: activeBrand,
             page: urlParams['page'] || 1,
             search: urlParams['search'] || '',
             category: urlParams['category'] || '',
@@ -29,19 +30,21 @@ class Routing extends Component {
         });
 
         // Update the active brand
-        this.props.updateActiveBrand(match.params.brand || location.pathname.split('/')[1] || DEFAULT_BRAND)
+        this.props.updateActiveBrand(activeBrand);
+
+        console.log('The new active brand is: ', activeBrand);
 
         // Check if we need to fetch the categories list
-        this.handleCategories();
+        this.handleCategories(activeBrand);
     }
 
-    handleCategories = () => {
-        let brand = this.props.providers[this.props.activeBrand];
+    handleCategories = (brand) => {
+        brand = brand || this.props.providers[this.props.activeBrand];
         let categories = brand.allCategories;
 
         // If there are no categories, fetch and populate
         if(!categories || categories.length === 0){
-            this.props.getCategoriesByBrand(this.props.activeBrand);
+            this.props.getCategoriesByBrand(brand);
         }
     }
 

@@ -12,7 +12,7 @@ const CategoriesList = (props) => {
             );
         }
 
-        if(links.length === 0) links = <i>No Categories Found.</i>;
+        if(links.length === 0) links = <i style={{'font-size': '12px'}}>No Categories Found.</i>;
         return links;
     }
 
