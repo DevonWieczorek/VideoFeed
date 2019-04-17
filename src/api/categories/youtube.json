@@ -1,0 +1,27 @@
+{
+    "categories": [{
+            "id": 1,
+            "category": "sports"
+        },
+        {
+            "id": 2,
+            "category": "comedy"
+        },
+        {
+            "id": 3,
+            "category": "music"
+        },
+        {
+            "id": 4,
+            "category": "gaming"
+        },
+        {
+            "id": 5,
+            "category": "trending"
+        },
+        {
+            "id": 6,
+            "category": "live"
+        }
+    ]
+}

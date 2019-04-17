@@ -1,0 +1,19 @@
+{
+    "categories": [{
+            "id": 1,
+            "category": "sports"
+        },
+        {
+            "id": 2,
+            "category": "comedy"
+        },
+        {
+            "id": 3,
+            "category": "gaming"
+        },
+        {
+            "id": 4,
+            "category": "trending"
+        }
+    ]
+}
