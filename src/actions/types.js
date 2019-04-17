@@ -11,7 +11,7 @@ export const ENDPOINT = process.env.REACT_APP_DEFAULT_ENDPOINT;
 export const GET_DATA = 'get_data';
 
 // BRANDS
-export const DEFAULT_BRAND = 'youtube';
+export const DEFAULT_BRAND = process.env.REACT_APP_DEFAULT_BRAND;
 export const RESET_BRAND = 'reset_brand';
 export const RESET_ALL_BRANDS = 'reset_all_brands';
 export const UPDATE_ACTIVE_BRAND = 'update_active_brand';
