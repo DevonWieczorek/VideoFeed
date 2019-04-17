@@ -51,7 +51,7 @@ app.get("/:brand/categories", (req, res, next) => {
 
     // Send back the response
     res.status(200);
-    res.json({'brand': req.params.brand, 'categories': categories});
+    res.json({'brand': req.params.brand, 'categories': categories['categories']});
 });
 
 app.post('/', function(request, response) {
