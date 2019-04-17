@@ -509,6 +509,7 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   margin: 15px auto;
 }
 .results-banner span {
+  text-transform: uppercase;
   font-weight: 600;
   font-style: italic;
 }
