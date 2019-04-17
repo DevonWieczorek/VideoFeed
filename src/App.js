@@ -28,6 +28,7 @@ class App extends Component {
     }
 
     componentDidMount() {
+        console.log(process.env.REACT_APP_DEFAULT_ENDPOINT);
         console.log(this.props);
     }
 

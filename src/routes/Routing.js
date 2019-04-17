@@ -5,7 +5,7 @@ import queryString from 'query-string';
 import Feed from '../pages/Feed';
 import NotFound from '../pages/NotFound';
 import ErrorBoundary from '../components/ErrorBoundary';
-import {updateAllBrandInfo, updateActiveBrand} from '../actions';
+import {updateAllBrandInfo, updateActiveBrand, updateBrandAttribute} from '../actions';
 import {DEFAULT_BRAND} from '../actions/types';
 
 class Routing extends Component {
@@ -32,6 +32,7 @@ class Routing extends Component {
 
     componentDidMount(){
         this.onRouteChanged();
+        this.props.updateBrandAttribute('youtube', 'allCategories', [{'category': 'test'}]);
     }
 
     render(){
@@ -62,4 +63,6 @@ const mapStateToProps = (state) => {
     return{ ...state.brands};
 }
 
-export default connect(mapStateToProps, {updateAllBrandInfo, updateActiveBrand})(withRouter(Routing));
+export default connect(mapStateToProps, {
+    updateAllBrandInfo, updateActiveBrand, updateBrandAttribute
+})(withRouter(Routing));

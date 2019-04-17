@@ -3,7 +3,8 @@ import {
     RESET_BRAND,
     RESET_ALL_BRANDS,
     UPDATE_ACTIVE_BRAND,
-    UPDATE_ALL_BRAND_INFO
+    UPDATE_ALL_BRAND_INFO,
+    UPDATE_BRAND_ATTRIBUTE
 } from '../actions/types';
 import * as brands from '../data/brand-defaults';
 
@@ -70,6 +71,28 @@ export default (state = INITIAL_STATE, action) => {
                         search: action.payload.search,
                         category: action.payload.category,
                         queryString: action.payload.queryString
+                    }
+                }
+            }
+
+        case UPDATE_BRAND_ATTRIBUTE:
+            console.log({
+                ...state,
+                providers: {
+                    ...state.providers,
+                    [action.payload.brand]: {
+                        ...state.providers[action.payload.brand],
+                        [action.payload.attribute]: action.payload.value
+                    }
+                }
+            })
+            return{
+                ...state,
+                providers: {
+                    ...state.providers,
+                    [action.payload.brand]: {
+                        ...state.providers[action.payload.brand],
+                        [action.payload.attribute]: action.payload.value
                     }
                 }
             }
