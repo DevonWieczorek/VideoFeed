@@ -7,7 +7,7 @@ const BrandsList = () => {
         let brands = require('../data/sample/brands.json');
 
         for(let b in brands['brands']){
-            let brand = brands['brands'][b].brand;
+            let brand = brands['brands'][b].brand.toLowerCase();
             links.push(
                 <NavLink to={`/${brand}`} className="nav-link border-bottom truncate" activeClassName="active">{brand}</NavLink>
             );

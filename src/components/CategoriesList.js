@@ -7,7 +7,7 @@ const CategoriesList = () => {
         let categories = require('../data/sample/categories.json');
 
         for(let c in categories['categories']){
-            let category = categories['categories'][c].category;
+            let category = categories['categories'][c].category.toLowerCase();
             links.push(
                 <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" value={category}>{category}</ParamLink>
             );
