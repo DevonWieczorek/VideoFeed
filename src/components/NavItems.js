@@ -37,7 +37,9 @@ class NavItems extends Component {
                             id="categories-accordion"
                             title="Categories"
                         >
-                            <CategoriesList />
+                            <CategoriesList categories={
+                                this.props.providers[this.props.activeBrand].allCategories
+                            }/>
                         </CollapsiblePanel>
                     </li>
                 </ul>

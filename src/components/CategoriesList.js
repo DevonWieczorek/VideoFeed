@@ -1,26 +1,22 @@
 import React from 'react';
 import ParamLink from "./ParamLink";
 
-const CategoriesList = () => {
+const CategoriesList = (props) => {
     const renderLinks = () => {
         let links = [];
-        let categories = require('../data/sample/categories.json');
 
-        for(let c in categories['categories']){
-            let category = categories['categories'][c].category.toLowerCase();
+        for(let c in props.categories){
+            let category = props.categories[c].category.toLowerCase();
             links.push(
-                <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" value={category}>{category}</ParamLink>
+                <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" key={category} value={category}>{category}</ParamLink>
             );
         }
 
+        if(links.length === 0) links = <i>No Categories Found.</i>;
         return links;
     }
 
-    return(
-        <ul className="navbar-nav">{}
-            {renderLinks()}
-        </ul>
-    );
+    return( <ul className="navbar-nav"> {renderLinks()} </ul> );
 }
 
 export default CategoriesList;
