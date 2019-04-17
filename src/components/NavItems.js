@@ -1,8 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {BrowserView} from "react-device-detect";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import Search from "./Search";
-import ParamLink from "./ParamLink";
 import BrandsList from "./BrandsList";
 import CategoriesList from "./CategoriesList";
 import CollapsiblePanel from "./CollapsiblePanel";
@@ -44,4 +44,8 @@ const NavItems = () => {
     );
 }
 
-export default NavItems;
+const mapStateToProps = (state) => {
+    return{ ...state.brands};
+}
+
+export default connect(mapStateToProps, {})(withRouter(NavItems));

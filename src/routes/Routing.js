@@ -41,7 +41,6 @@ class Routing extends Component {
 
         // If there are no categories, fetch and populate
         if(!categories || categories.length === 0){
-            console.log('need to fetch categories');
             this.props.getCategoriesByBrand(this.props.activeBrand);
         }
     }
@@ -54,7 +53,6 @@ class Routing extends Component {
 
     componentDidMount(){
         this.onRouteChanged();
-        this.props.updateBrandAttribute('youtube', 'allCategories', [{'category': 'test'}]);
     }
 
     render(){
