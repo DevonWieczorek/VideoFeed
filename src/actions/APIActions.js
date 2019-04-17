@@ -1,6 +1,6 @@
 import {ENDPOINT, GET_DATA, UPDATE_BRAND_ATTRIBUTE} from "./types";
 
-// Test action - will get replaced with true search 
+// Test action - will get replaced with true search
 export const getData = queryString => {
     return dispatch => {
         console.log(`Calling ${ENDPOINT}${queryString}...`);
@@ -20,9 +20,9 @@ export const getData = queryString => {
 
 // Call our service to get a list of categories for the active brand
 export const getCategoriesByBrand = (brand) => {
-    const endpoint = `${process.env.REACT_APP_DEFAULT_ENDPOINT}/${brand}/categories`;
+    const _endpoint = `${ENDPOINT}/${brand}/categories`;
     return dispatch => {
-        fetch(endpoint)
+        fetch(_endpoint)
             .then(res => res.json())
             .then(res => {
                 let payload = {brand: brand, attribute: 'allCategories', value: res.categories}
