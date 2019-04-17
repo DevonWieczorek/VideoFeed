@@ -445,6 +445,7 @@ nav.navbar li .nav-link {
   padding: 5px 0;
   font-weight: 400;
   color: #212529;
+  text-transform: capitalize;
 }
 nav.navbar li .nav-link.active {
   color: red;

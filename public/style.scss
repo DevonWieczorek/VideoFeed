@@ -393,6 +393,7 @@ nav.navbar li {
         padding: 5px 0;
         font-weight: 400;
         color: $secondary-link-color;
+        text-transform: capitalize;
 
         &.active {
             color: $main-brand-color;
