@@ -462,11 +462,27 @@ nav.navbar li {
     }
 }
 
+.results-banner {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+
+    span {
+        text-transform: capitalize;
+        font-weight: 600;
+        font-style: italic;
+    }
+}
+
 .feed-wrapper {
     margin: auto;
 }
 
 @media all and (max-width: ($breakpoint-lg - 1px)) {
+    .app {
+        padding-top: 40px;
+    }
+
     .mobile-nav {
         nav.navbar {
             height: 100%;
@@ -535,6 +551,11 @@ nav.navbar li {
                 }
             }
         }
+    }
+
+    .results-banner {
+        margin-top: 0;
+        text-align: center;
     }
 }
 
