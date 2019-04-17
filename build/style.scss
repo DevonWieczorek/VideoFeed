@@ -393,6 +393,11 @@ nav.navbar li {
         padding: 5px 0;
         font-weight: 400;
         color: $secondary-link-color;
+        text-transform: capitalize;
+
+        &.active {
+            color: $main-brand-color;
+        }
     }
 
     .panel-group {
@@ -443,6 +448,17 @@ nav.navbar li {
         .react-search-field-input {
             display: block;
         }
+    }
+}
+
+.not-found {
+    padding: 25px;
+
+    .react-search-field {
+        position: static;
+        height: 35px !important;
+        margin-top: 20px;
+        border: $default-border !important;
     }
 }
 

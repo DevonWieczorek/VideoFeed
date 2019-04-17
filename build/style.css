@@ -445,6 +445,10 @@ nav.navbar li .nav-link {
   padding: 5px 0;
   font-weight: 400;
   color: #212529;
+  text-transform: capitalize;
+}
+nav.navbar li .nav-link.active {
+  color: red;
 }
 nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   border: none !important;
@@ -487,6 +491,16 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
 }
 .react-search-field.active .react-search-field-input {
   display: block;
+}
+
+.not-found {
+  padding: 25px;
+}
+.not-found .react-search-field {
+  position: static;
+  height: 35px !important;
+  margin-top: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
 }
 
 .feed-wrapper {
