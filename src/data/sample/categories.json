@@ -1,27 +1,27 @@
 {
     "categories": [{
             "id": 1,
-            "category": "Sports"
+            "category": "sports"
         },
         {
             "id": 2,
-            "category": "Comedy"
+            "category": "comedy"
         },
         {
             "id": 3,
-            "category": "Action"
+            "category": "action"
         },
         {
             "id": 4,
-            "category": "Drama"
+            "category": "drama"
         },
         {
             "id": 5,
-            "category": "Trending"
+            "category": "trending"
         },
         {
             "id": 6,
-            "category": "Live"
+            "category": "live"
         }
     ]
 }

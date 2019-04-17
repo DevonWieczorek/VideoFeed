@@ -5,5 +5,6 @@ export const vimeo = {
     page: 1,
     search: "",
     category: "",
-    queryString: ""
+    queryString: "",
+    allCategories: []
 };

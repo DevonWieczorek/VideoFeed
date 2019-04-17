@@ -4,5 +4,6 @@ export const metacafe = {
     page: 1,
     search: "",
     category: "",
-    queryString: ""
+    queryString: "",
+    allCategories: []
 };
