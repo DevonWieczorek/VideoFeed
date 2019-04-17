@@ -9,7 +9,7 @@ const BrandsList = () => {
         for(let b in brands['brands']){
             let brand = brands['brands'][b].brand.toLowerCase();
             links.push(
-                <NavLink to={`/${brand}`} className="nav-link border-bottom truncate" activeClassName="active">{brand}</NavLink>
+                <NavLink to={`/${brand}`} className="nav-link border-bottom truncate" activeClassName="active" key={b}>{brand}</NavLink>
             );
         }
 

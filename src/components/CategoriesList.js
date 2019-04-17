@@ -8,11 +8,11 @@ const CategoriesList = (props) => {
         for(let c in props.categories){
             let category = props.categories[c].category.toLowerCase();
             links.push(
-                <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" key={category} value={category}>{category}</ParamLink>
+                <ParamLink className="nav-link border-bottom truncate" activeClassName="active" param="category" key={c} value={category}>{category}</ParamLink>
             );
         }
 
-        if(links.length === 0) links = <i style={{'font-size': '12px'}}>No Categories Found.</i>;
+        if(links.length === 0) links = <i style={{'fontSize': '12px'}}>No Categories Found.</i>;
         return links;
     }
 

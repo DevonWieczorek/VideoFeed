@@ -43,7 +43,7 @@ class Pagination extends Component {
             let index = this.state.currPage + i;
             let classNames = `page-item ${(index === this.state.currPage) ? 'active' : ''}`;
             buttons.push(
-                <li className={`${classNames}`}>
+                <li className={`${classNames}`} key={index}>
                   <span
                     className="page-link"
                     onClick={() => { this.updatePage(index); }}
@@ -71,7 +71,7 @@ class Pagination extends Component {
           <nav className="pagination-holder" aria-label={this.props.ariaLabel}>
             <ul className="pagination">
               {(this.state.currPage > 1) ?
-                  <li className="page-item">
+                  <li className="page-item" key="-1">
                     <span
                       className="page-link"
                       onClick={() => { this.updatePage('-1'); }}
@@ -84,7 +84,7 @@ class Pagination extends Component {
               {this.dynamicPageButtons()}
 
               {(!this.state.LAST_PAGE || (this.state.currPage + (this.state.MAX_PAGES - 1) < this.state.LAST_PAGE)) ?
-                  <li className="page-item">
+                  <li className="page-item" key="+1">
                     <span
                       className="page-link"
                       onClick={() => { this.updatePage('+1'); }}

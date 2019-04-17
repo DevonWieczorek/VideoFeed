@@ -14,6 +14,7 @@ const Feed = (props) => {
                     title="Dynamic Title"
                     src="http://www.fillmurray.com/300/200"
                     link="#"
+                    key={i}
                 >
                     <div className="row">
                         <div className="single-detail col">{abbvNumber(randomNumber(10000, 76526173))} Views &middot; <span className="success">78.6%</span></div>
