@@ -46,6 +46,12 @@ app.get("/:brand", (req, res, next) => {
     res.json(queryObj);
 });
 
+app.get("/:brand/categories", (req, res, next) => {
+    // Send back the response
+    res.status(200);
+    res.json({'brand': req.params.brand, 'categories': []});
+});
+
 app.post('/', function(request, response) {
     // Send back the response
     response.status(200);
