@@ -360,7 +360,7 @@ a.home-button:hover {
 }
 
 .app {
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
 nav.navbar {
@@ -462,6 +462,17 @@ nav.navbar li {
     }
 }
 
+.results-banner {
+    display: block;
+    width: 100%;
+    margin: 15px auto;
+
+    span {
+        font-weight: 600;
+        font-style: italic;
+    }
+}
+
 .feed-wrapper {
     margin: auto;
 }
@@ -535,6 +546,11 @@ nav.navbar li {
                 }
             }
         }
+    }
+
+    .results-banner {
+        margin-top: 0;
+        text-align: center;
     }
 }
 

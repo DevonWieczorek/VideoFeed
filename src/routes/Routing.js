@@ -5,6 +5,7 @@ import queryString from 'query-string';
 import Feed from '../pages/Feed';
 import NotFound from '../pages/NotFound';
 import ErrorBoundary from '../components/ErrorBoundary';
+import ResultsBanner from '../components/ResultsBanner';
 import {
     updateAllBrandInfo,
     updateActiveBrand,
@@ -64,6 +65,7 @@ class Routing extends Component {
                 <Route exact path="/" key="homeFeed" component={() => {
                     return(
                         <ErrorBoundary errorContent={<NotFound/>}>
+                            <ResultsBanner />
                             <Feed />
                         </ErrorBoundary>
                     );
@@ -72,6 +74,7 @@ class Routing extends Component {
                 <Route path="/:brand" key="brand" component={() => {
                     return(
                         <ErrorBoundary errorContent={<NotFound/>}>
+                            <ResultsBanner />
                             <Feed />
                         </ErrorBoundary>
                     );

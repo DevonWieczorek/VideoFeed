@@ -412,7 +412,7 @@ a.home-button:hover {
 }
 
 .app {
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 nav.navbar {
@@ -503,6 +503,16 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   border: 1px solid rgba(0, 0, 0, 0.15) !important;
 }
 
+.results-banner {
+  display: block;
+  width: 100%;
+  margin: 15px auto;
+}
+.results-banner span {
+  font-weight: 600;
+  font-style: italic;
+}
+
 .feed-wrapper {
   margin: auto;
 }
@@ -564,6 +574,11 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
     padding: 0 10px;
     font-size: 16px;
     font-weight: 400;
+  }
+
+  .results-banner {
+    margin-top: 0;
+    text-align: center;
   }
 }
 @media all and (min-width: 576px) and (max-width: 991px) {
