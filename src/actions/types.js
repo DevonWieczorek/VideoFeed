@@ -8,7 +8,7 @@ export const RESET_META = 'reset_meta';
 
 // API
 export const ENDPOINT = process.env.REACT_APP_DEFAULT_ENDPOINT;
-export const GET_DATA = 'get_data';
+export const SEARCH_BY_QUERY = 'get_data';
 
 // BRANDS
 export const DEFAULT_BRAND = process.env.REACT_APP_DEFAULT_BRAND;

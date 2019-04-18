@@ -4,7 +4,7 @@ import { isMobile } from "react-device-detect";
 import SearchField from "react-search-field";
 import { withRouter } from "react-router-dom";
 import {updatedURLParamString} from "../utils/url";
-import {getData} from "../actions";
+import {searchByQuery} from "../actions";
 
 class Search extends Component {
     state = {
@@ -18,6 +18,7 @@ class Search extends Component {
         return `search-bar ${(this.state.active) ? 'active' : 'hidden'}`;
     }
 
+    // Handle input typing
     updateSearch = (value) => {
         this.setState({...this.state, searchString: value});
     }
@@ -28,12 +29,16 @@ class Search extends Component {
         else{ return this.state.active; }
     }
 
+    // On click of the search icon
     onSearchClick = (value) => {
         if(this.state.active){
             if(this.state.searchString) this.submit();
+
+            // Toggle search field visibility off for mobile after submit
             if(isMobile) this.setState({...this.state, active: false});
         }
         else{
+            // Toggle search field visibility for mobile
             this.setState({
                 ...this.state,
                 active: true
@@ -57,7 +62,7 @@ class Search extends Component {
             active: (isMobile) ? false : true
         }, () => {
             // Wait for URL to update then make the API call
-            this.props.getData(this.props.location.search);
+            this.props.searchByQuery(this.props.brands.activeBrand, this.props.location.search);
         });
     }
 
@@ -86,7 +91,10 @@ class Search extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {...state.meta};
+    return {
+        meta: state.meta,
+        brands: state.brands
+    };
 }
 
-export default connect(mapStateToProps, { getData })(withRouter(Search));
+export default connect(mapStateToProps, { searchByQuery })(withRouter(Search));

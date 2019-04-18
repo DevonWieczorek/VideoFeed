@@ -23,7 +23,6 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, action) => {
-    console.log('brand reducer:', action.type, action.payload);
     switch(action.type){
         case UPDATE_ACTIVE_BRAND:
             return{

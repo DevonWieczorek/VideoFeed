@@ -1,19 +1,51 @@
-import {ENDPOINT, GET_DATA, UPDATE_BRAND_ATTRIBUTE} from "./types";
+import {ENDPOINT, SEARCH_BY_QUERY, UPDATE_BRAND_ATTRIBUTE} from "./types";
 
-// Test action - will get replaced with true search
-export const getData = queryString => {
+// Call API with full query string
+// REQUIRED: q= (search)
+// Optional: category, brand, page
+export const searchByQuery = (brand, queryString) => {
     return dispatch => {
-        console.log(`Calling ${ENDPOINT}${queryString}...`);
-        fetch(`${ENDPOINT}${queryString}`)
+        let _endpoint = `${ENDPOINT}/${brand}${queryString}`;
+        console.log(`Calling ${_endpoint}...`);
+        fetch(_endpoint)
             .then(res => res.json())
             .then(res => {
-                dispatch({type: GET_DATA, payload: res});
+                dispatch({type: SEARCH_BY_QUERY, payload: res});
             })
             .catch(err => {
-                console.log(
-                    `There was an error getting data from ${ENDPOINT}${queryString}:`,
-                    err
-                );
+                console.log(`There was an error getting data from ${_endpoint}:`, err);
+            });
+    };
+};
+
+// Test function, will need to update once the real endpoint is built
+export const searchByCategory = (brand, queryString) => {
+    return dispatch => {
+        let _endpoint = `${ENDPOINT}/${brand}${queryString}`;
+        console.log(`Calling ${_endpoint}...`);
+        fetch(_endpoint)
+            .then(res => res.json())
+            .then(res => {
+                dispatch({type: SEARCH_BY_QUERY, payload: res});
+            })
+            .catch(err => {
+                console.log(`There was an error getting data from ${_endpoint}:`, err);
+            });
+    };
+};
+
+// Test function, will need to update once the real endpoint is built
+export const searchByBrandDefault = (brand) => {
+    return dispatch => {
+        let _endpoint = `${ENDPOINT}/${brand}`;
+        console.log(`Calling ${_endpoint}...`);
+        fetch(_endpoint)
+            .then(res => res.json())
+            .then(res => {
+                dispatch({type: SEARCH_BY_QUERY, payload: res});
+            })
+            .catch(err => {
+                console.log(`There was an error getting data from ${_endpoint}:`, err);
             });
     };
 };

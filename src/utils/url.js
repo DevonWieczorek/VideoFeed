@@ -1,5 +1,8 @@
 import queryString from 'query-string';
 
+// Query string requires props to be able to access location.search
+// Pass in props as ctx when calling query-string related functions 
+
 export const getURLParam = (ctx, param, location) => {
     if(!location) location = ctx.location.search;
     const urlParams = queryString.parse(location);

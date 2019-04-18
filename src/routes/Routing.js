@@ -6,11 +6,15 @@ import Feed from '../pages/Feed';
 import NotFound from '../pages/NotFound';
 import ErrorBoundary from '../components/ErrorBoundary';
 import ResultsBanner from '../components/ResultsBanner';
+import {getURLParam} from "../utils/url";
 import {
     updateAllBrandInfo,
     updateActiveBrand,
     updateBrandAttribute,
-    getCategoriesByBrand
+    getCategoriesByBrand,
+    searchByQuery,
+    searchByCategory,
+    searchByBrandDefault
 } from '../actions';
 import {DEFAULT_BRAND} from '../actions/types';
 
@@ -39,6 +43,30 @@ class Routing extends Component {
         this.handleCategories(activeBrand);
     }
 
+    // Populate the feed with initial search results
+    delegateSearch = () => {
+        // If search results are already in state then skip
+        if(this.props.api.searchResults) return;
+
+        let brand = this.props.brands.activeBrand;
+        let query = getURLParam(this.props, 'q');
+        let category = getURLParam(this.props, 'category');
+
+        if(query){
+            // Search by brand and full query string
+            // (May also include category, brand, and page)
+            this.props.searchByQuery(brand, this.props.location.search);
+        }
+        else if(category){
+            //searchByCategory
+            this.props.searchByCategory(brand, category);
+        }
+        else{
+            //searchByBrandDefault
+            this.props.searchByBrandDefault(brand);
+        }
+    }
+
     handleCategories = (brand) => {
         brand = brand || this.props.providers[this.props.activeBrand];
         let categories = brand.allCategories;
@@ -56,6 +84,7 @@ class Routing extends Component {
     }
 
     componentDidMount(){
+        this.delegateSearch();
         this.onRouteChanged();
     }
 
@@ -66,7 +95,7 @@ class Routing extends Component {
                     return(
                         <ErrorBoundary errorContent={<NotFound/>}>
                             <ResultsBanner />
-                            <Feed />
+                            <Feed results={this.props.api.searchResults} />
                         </ErrorBoundary>
                     );
                 }} />
@@ -75,7 +104,7 @@ class Routing extends Component {
                     return(
                         <ErrorBoundary errorContent={<NotFound/>}>
                             <ResultsBanner />
-                            <Feed />
+                            <Feed results={this.props.api.searchResults} />
                         </ErrorBoundary>
                     );
                 }} />
@@ -86,9 +115,18 @@ class Routing extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return{ ...state.brands};
+    return {
+        brands: state.brands,
+        api: state.api
+    };
 }
 
 export default connect(mapStateToProps, {
-    updateAllBrandInfo, updateActiveBrand, updateBrandAttribute, getCategoriesByBrand
+    updateAllBrandInfo,
+    updateActiveBrand,
+    updateBrandAttribute,
+    getCategoriesByBrand,
+    searchByQuery,
+    searchByCategory,
+    searchByBrandDefault
 })(withRouter(Routing));
