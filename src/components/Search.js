@@ -4,7 +4,6 @@ import { isMobile } from "react-device-detect";
 import SearchField from "react-search-field";
 import { withRouter } from "react-router-dom";
 import {updatedURLParamString} from "../utils/url";
-import {searchByQuery} from "../actions";
 
 class Search extends Component {
     state = {
@@ -60,9 +59,6 @@ class Search extends Component {
             ...this.state,
             searchString: '',
             active: (isMobile) ? false : true
-        }, () => {
-            // Wait for URL to update then make the API call
-            this.props.searchByQuery(this.props.brands.activeBrand, this.props.location.search);
         });
     }
 
@@ -97,4 +93,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps, { searchByQuery })(withRouter(Search));
+export default connect(mapStateToProps, {})(withRouter(Search));

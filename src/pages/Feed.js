@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import NotFound from './NotFound';
 import TileHeroLink from '../modules/TileHeroLink';
 import Pagination from '../components/Pagination';
 import {abbvNumber} from '../utils/misc';
@@ -8,9 +7,6 @@ import { getURLParam } from "../utils/url";
 
 const Feed = (props) => {
     const renderFeed = (results) => {
-        // Return our NotFound component if there's nothing to display
-        if(!results) return <NotFound/>;
-
         let items = [];
         for(var i = 0; i < 12 && i < results.videos.length; i++){
             let video = results.videos[i];
@@ -35,7 +31,7 @@ const Feed = (props) => {
 
     return(
         <>
-            {renderFeed(props.results)}
+            {(props.results) ? renderFeed(props.results) : null}
 
             {(props.results) ?
                 <center className="clear">
