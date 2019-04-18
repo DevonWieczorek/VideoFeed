@@ -25,11 +25,14 @@ class Routing extends Component {
         let urlParams = queryString.parse(this.props.location.search);
         let activeBrand = match.params.brand || location.pathname.split('/')[1] || DEFAULT_BRAND;
 
+        // Search for results to populate the feed
+        this.delegateSearch();
+
         // Update the global brand info
         this.props.updateAllBrandInfo({
             activeBrand: activeBrand,
             page: urlParams['page'] || 1,
-            search: urlParams['search'] || '',
+            search: urlParams['q'] || '',
             category: urlParams['category'] || '',
             queryString: location.search || ''
         });
@@ -37,36 +40,34 @@ class Routing extends Component {
         // Update the active brand
         this.props.updateActiveBrand(activeBrand);
 
-        console.log('The new active brand is: ', activeBrand);
-
         // Check if we need to fetch the categories list
         this.handleCategories(activeBrand);
     }
 
-    // Populate the feed with initial search results
+    // Decide what kind of search to perform based on url params
     delegateSearch = () => {
-        // If search results are already in state then skip
-        if(this.props.api.searchResults) return;
-
         let brand = this.props.brands.activeBrand;
         let query = getURLParam(this.props, 'q');
         let category = getURLParam(this.props, 'category');
 
         if(query){
             // Search by brand and full query string
-            // (May also include category, brand, and page)
+            // (May also include category and page)
             this.props.searchByQuery(brand, this.props.location.search);
         }
         else if(category){
-            //searchByCategory
+            // Search by brand and category
             this.props.searchByCategory(brand, category);
         }
-        else{
-            //searchByBrandDefault
+        else if(!this.props.api.searchResults){
+            // If no results exist in state then
+            // call the API and get default search
+            // results by brand
             this.props.searchByBrandDefault(brand);
         }
     }
 
+    // Fetch a list of categories to search based on brand 
     handleCategories = (brand) => {
         brand = brand || this.props.providers[this.props.activeBrand];
         let categories = brand.allCategories;
@@ -84,7 +85,6 @@ class Routing extends Component {
     }
 
     componentDidMount(){
-        this.delegateSearch();
         this.onRouteChanged();
     }
 
