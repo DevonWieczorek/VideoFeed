@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { updateURLParams, getURLParam } from "../helpers/url";
+import { updateURLParams, getURLParam } from "../utils/url";
 
 class Pagination extends Component {
     state = {

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { isMobile } from "react-device-detect";
 import SearchField from "react-search-field";
 import { withRouter } from "react-router-dom";
-import {updatedURLParamString} from "../helpers/url";
+import {updatedURLParamString} from "../utils/url";
 import {getData} from "../actions";
 
 class Search extends Component {

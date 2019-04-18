@@ -2,8 +2,8 @@ import React from 'react';
 import { withRouter } from "react-router-dom";
 import TileHeroLink from '../modules/TileHeroLink';
 import Pagination from '../components/Pagination';
-import {randomNumber, abbvNumber} from '../helpers/misc';
-import { getURLParam } from "../helpers/url";
+import {randomNumber, abbvNumber} from '../utils/misc';
+import { getURLParam } from "../utils/url";
 
 const Feed = (props) => {
     const renderFeed = () => {

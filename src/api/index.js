@@ -41,9 +41,12 @@ app.get("/:brand", (req, res, next) => {
         'queryString': encodeURIComponent(concatQueries)
     };
 
+    let results = require(`./results/${req.params.brand}`);
+    console.log(queryObj);
+
     // Send back the response
     res.status(200);
-    res.json(queryObj);
+    res.json(results);
 });
 
 app.get("/:brand/categories", (req, res, next) => {

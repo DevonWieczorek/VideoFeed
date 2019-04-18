@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
-import {getURLParam, updatedURLParamString} from '../helpers/url';
+import {getURLParam, updatedURLParamString} from '../utils/url';
 
 const ParamLink = (props) => {
     // Get the url's value of this ParamLink's param (used for active class)

@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from "react-router-dom";
-import {getURLParam} from '../helpers/url';
+import {getURLParam} from '../utils/url';
 
 const ResultsBanner = (props) => {
     if(getURLParam(props, 'q')){

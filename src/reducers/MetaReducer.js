@@ -1,5 +1,5 @@
 import { META, RESET_META } from '../actions/types';
-import { mergeObjects } from '../helpers/objects';
+import { mergeObjects } from '../utils/objects';
 
 const INITIAL_STATE = {
     'title': 'VideoFeed | Clean React UI',
