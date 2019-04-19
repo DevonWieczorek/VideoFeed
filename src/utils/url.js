@@ -31,3 +31,9 @@ export const updateURLParams = (ctx, paramObj) => {
     const pathWithParams = updatedURLParamString(ctx, paramObj);
     ctx.history.push(pathWithParams);
 }
+
+// Preserve the active path and then update the query param
+export const preservePathUpdateParams = (ctx, params) => {
+    ctx.match.url = ctx.location.pathname;
+    ctx.history.push(updatedURLParamString(ctx, params));
+}

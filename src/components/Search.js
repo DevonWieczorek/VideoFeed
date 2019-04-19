@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import { isMobile } from "react-device-detect";
 import SearchField from "react-search-field";
 import { withRouter } from "react-router-dom";
-import {updatedURLParamString} from "../utils/url";
+import {preservePathUpdateParams} from "../utils/url";
 
 class Search extends Component {
     state = {
@@ -45,17 +45,11 @@ class Search extends Component {
         }
     }
 
-    // Preserve the active path and then update the query param
-    preservePathUpdateParams = () => {
-        this.props.match.url = this.props.location.pathname;
-        this.props.history.push(updatedURLParamString(this.props, {
+    submit = () => {
+        preservePathUpdateParams(this.props, {
             'q': this.state.searchString,
             'page': 1 // Reset the page to 1 for new searches
-        }));
-    }
-
-    submit = () => {
-        this.preservePathUpdateParams();
+        });
 
         // Clear field and toggle search bar
         this.setState({
