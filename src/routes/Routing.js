@@ -47,7 +47,7 @@ class Routing extends Component {
 
     // Decide what kind of search to perform based on url params
     delegateSearch = (brand, query, category) => {
-        brand = brand || this.props.brands.activeBrand;
+        brand = brand || this.props.brands.activeBrand || process.env.REACT_APP_DEFAULT_BRAND;
         query = query || getURLParam(this.props, 'q');
         category = category || getURLParam(this.props, 'category');
 
@@ -60,7 +60,8 @@ class Routing extends Component {
         else if(category){
             console.log('search by category: ', brand, category);
             // Search by brand and category
-            this.props.searchByCategory(brand, category);
+            // Use entire query string to allow for paginated category search 
+            this.props.searchByCategory(brand, this.props.location.search);
         }
         else{
             console.log('search by brand default: ', brand);
