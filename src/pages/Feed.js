@@ -8,7 +8,8 @@ import { getURLParam } from "../utils/url";
 const Feed = (props) => {
     const renderFeed = (results) => {
         let items = [];
-        for(var i = 0; i < 12 && i < results.videos.length; i++){
+        const MAX = parseInt(process.env.REACT_APP_MAX_RESULTS_PER_PAGE);
+        for(var i = 0; i < MAX && i < results.videos.length; i++){
             let video = results.videos[i];
             items.push(
                 <TileHeroLink
@@ -20,7 +21,7 @@ const Feed = (props) => {
                     <div className="row">
                         <div className="single-detail col">
                             {abbvNumber(video['views'])} Views &middot; <span className="success">{parseFloat(video['rating']).toFixed(1)}%</span>
-                    </div>
+                        </div>
                         <div className="single-detail col">{video['duration']}</div>
                     </div>
                 </TileHeroLink>
