@@ -48,7 +48,10 @@ class Search extends Component {
     // Preserve the active path and then update the query param
     preservePathUpdateParams = () => {
         this.props.match.url = this.props.location.pathname;
-        this.props.history.push(updatedURLParamString(this.props, 'q', this.state.searchString));
+        this.props.history.push(updatedURLParamString(this.props, {
+            'q': this.state.searchString,
+            'page': 1 // Reset the page to 1 for new searches
+        }));
     }
 
     submit = () => {

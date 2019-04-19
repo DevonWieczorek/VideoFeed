@@ -10,23 +10,8 @@ const ParamLink = (props) => {
     // Preserve the active path and then update the query param
     const preservePathUpdateParams = () => {
         props.match.url = props.location.pathname;
-        props.history.push(updatedURLParamString(props, props.param, props.value));
+        props.history.push(updatedURLParamString(props, {[props.param]: props.value, 'page': 1}));
     }
-
-    /*
-        // Results in youtube?/?caregory=test&page=1&q=query
-        // Beacause of updatedURLParamString()
-        <NavLink
-            to={{
-                pathname: props.location.pathname,
-                search: updatedURLParamString(props, props.param, props.value)
-            }}
-            className={props.className}
-            activeClassName={props.activeClassName}
-        >
-            {props.children}
-        </NavLink>
-    */
 
     return(
         <div

@@ -31,7 +31,7 @@ class Pagination extends Component {
             ...this.state,
             currPage: parseInt(page)
         }, () => {
-            updateURLParams(this.props, "page", parseInt(page));
+            updateURLParams(this.props, {"page": parseInt(page)});
             // INITIAL flag was added to prevent unintentional callback on page load
             if(!INITIAL && this.props.onPageUpdate) this.props.onPageUpdate();
         });
