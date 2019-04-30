@@ -1,0 +1,50 @@
+/* Globals */
+html {
+    background-color: $main-bg;
+    border-width: $border-width;
+    border-style: $border-style;
+    border-color: $border-color;
+    font-family: $sans-serif;
+    color: $main-color;
+}
+
+* {
+    box-sizing: border-box !important;
+}
+
+body,
+html {
+    border: none;
+}
+
+a {
+    color: $main-link-color;
+
+    &:active,
+    &:link,
+    &:visited {
+        color: $main-link-color;
+    }
+
+    &:hover {
+        color: $main-link-hover-color;
+    }
+
+    &.secondary {
+        color: $secondary-link-color;
+
+        &:active,
+        &:link,
+        &:visited {
+            color: $secondary-link-color;
+        }
+
+        &:hover {
+            color: $secondary-link-hover-color;
+        }
+    }
+}
+
+@include placeholder {
+    color: $muted-color;
+}

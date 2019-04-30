@@ -1,0 +1,168 @@
+/* Utilities */
+.clear {
+    content: "";
+    display: block;
+    clear: both;
+    float: none;
+}
+
+.float-left,
+.float-right {
+    display: inline-flex;
+}
+
+.float-left {
+    float: left;
+    clear: left;
+}
+
+.float-right {
+    float: right;
+    clear: right;
+}
+
+.fa,
+.fas {
+    padding-right: 10px;
+}
+
+.flip-hor {
+    @include transform(rotateY(180deg));
+}
+
+.fa.flip-hor,
+.fas.flip-hor {
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+.flip-vert {
+    @include transform(rotateX(180deg));
+}
+
+.shadow-right {
+    @include box-shadow(2px 0 15px 0 $shadow-color);
+}
+
+.shadow-bottom {
+    @include box-shadow(0 2px 15px 0 $shadow-color);
+}
+
+.border-all {
+    border: $default-border;
+}
+
+.border-top {
+    padding-top: 1rem;
+    border-top: $default-border;
+}
+
+.border-right {
+    padding-right: 1rem;
+    border-right: $default-border;
+}
+
+.border-bottom {
+    padding-bottom: 1rem;
+    border-bottom: $default-border;
+}
+
+.border-left {
+    padding-left: 1rem;
+    border-left: $default-border;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.truncate {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+*[class^="over-"],
+.super {
+    position: relative;
+}
+
+.over-1 {
+    z-index: 9;
+}
+
+.over-2 {
+    z-index: 99;
+}
+
+.over-3 {
+    z-index: 999;
+}
+
+.over-4 {
+    z-index: 99999;
+}
+
+.over-5 {
+    z-index: 9999999;
+}
+
+.super {
+    z-index: 999999999;
+}
+
+.v-center-children {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-color {
+    color: $main-brand-color;
+}
+
+.success {
+    color: $success-color;
+}
+
+@media all and (max-width: ($breakpoint-lg - 1px)) {
+    .float-left,
+    .float-right {
+        display: unset;
+        float: unset !important;
+        clear: unset !important;
+
+        &.flex {
+            display: flex;
+        }
+
+        &.block {
+            display: block;
+        }
+
+        &.inline {
+            display: inline;
+        }
+
+        &.inline-block {
+            display: inline-block;
+        }
+    }
+
+    .m-float-left,
+    .m-float-right {
+        display: inline-flex;
+    }
+
+    .m-float-left {
+        float: left;
+        clear: left;
+    }
+
+    .m-float-right {
+        float: right;
+        clear: right;
+    }
+}

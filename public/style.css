@@ -302,6 +302,7 @@ a.secondary:hover {
   }
 }
 /* Tiles */
+/* Tiles */
 .tile {
   margin: 0.5rem auto;
   padding: 0;
@@ -368,6 +369,7 @@ a.secondary:hover {
     max-width: 24%;
   }
 }
+/* Pagination */
 /* Pagination */
 nav.pagination-holder {
   display: inline-block;
@@ -789,6 +791,7 @@ nav.navbar .react-search-field .react-search-field-input {
   padding: 1.25rem;
 }
 
+/* Modals */
 /* Modals */
 .modal,
 .modal-bg {
