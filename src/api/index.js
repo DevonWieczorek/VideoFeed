@@ -7,7 +7,6 @@ const app = express()
 
 // add some security-related headers to the response
 app.use(helmet())
-
 app.use(express.json());
 
 app.get("/", (req, res, next) => {
