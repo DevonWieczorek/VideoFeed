@@ -606,6 +606,7 @@ nav.navbar li .panel-group .nav-link.border-bottom:last-of-type {
   }
   header div #partner-logo {
     height: 90%;
+    max-height: 40px;
   }
   header .react-search-field {
     right: 20px;

@@ -1,0 +1,35 @@
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$default-viewport-width: 375px;
+
+// https://stackoverflow.com/questions/36915508/what-are-the-material-design-dark-theme-colors
+$black: #000;
+$dark-grey: #212121;
+$med-grey: #303030;
+$light-grey: #424242;
+
+$main-bg: $dark-grey;
+$main-color: #fff;
+$main-brand-color: red;
+$muted-color: $light-grey;
+$shadow-color: rgba(0,0,0,.25);
+$menu-button-color: $muted-color;
+$main-link-color: $main-brand-color;
+$main-link-hover-color: $main-brand-color;
+$secondary-link-color: $main-color;
+$secondary-link-hover-color: $main-color;
+$success-color: var(--success, #28a745);
+
+$border-width: 1px;
+$border-style: solid;
+$border-color: $light-grey;
+$default-border: #{$border-width $border-style $border-color};
+
+$sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+$main-header-font: $sans-serif;
+$main-body-font: $sans-serif;
+
+$fixed-header-height: 50px;

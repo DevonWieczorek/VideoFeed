@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ErrorBoundary from './ErrorBoundary';
 
 class RotatingImage extends Component{
     state = {
@@ -22,9 +23,9 @@ class RotatingImage extends Component{
 
     updateSource = (source, index) => {
         this.setState({...this.state,
-                source: source,
-                sourceIndex: index
-        }, () => { console.log(this.state) });
+            source: source,
+            sourceIndex: index
+        });
     }
 
     componentDidMount(){
@@ -36,13 +37,17 @@ class RotatingImage extends Component{
 
     render(){
         return(
-            <img
-                className={this.props.className}
-                src={this.state.source}
-                alt={this.props.alt}
-                onMouseEnter={() => {this.onMouseEnter(this.props.sources)}}
-                onMouseLeave={() => {this.onMouseLeave()}}
-            />
+            <ErrorBoundary errorContent={
+                <em>No Image Found</em>
+            }>
+                <img
+                    className={this.props.className}
+                    src={this.state.source}
+                    alt={this.props.alt}
+                    onMouseEnter={() => {this.onMouseEnter(this.props.sources)}}
+                    onMouseLeave={() => {this.onMouseLeave()}}
+                />
+            </ErrorBoundary>
         );
     }
 }

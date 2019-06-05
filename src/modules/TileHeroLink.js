@@ -1,11 +1,12 @@
 import React from 'react';
+import RotatingImage from '../components/RotatingImage'
 
 const TileHeroLink = (props) => {
     return(
         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-auto mr-auto ml-auto tile tile-hero-link border-all rounded">
           <a href={props.link || '#'} className="tile-link" target={props.target || "_blank"}>
             <div className="tile-hero">
-              <img src={props.src || 'http://www.fillmurray.com/300/200'} alt={props.title || 'Content Unavailable'}/>
+              <RotatingImage sources={props.srcset} thumbnail={props.src} alt={props.title} />
             </div>
             <div className="tile-info">
               <div className="tile-title">{props.title || 'Content Unavailable'}</div>

@@ -36,7 +36,7 @@ export const searchByCategory = (brand, queryString) => {
 };
 
 // Test function, will need to update once the real endpoint is built
-// Call the API and return the default results for a given brand 
+// Call the API and return the default results for a given brand
 export const searchByBrandDefault = (brand) => {
     return dispatch => {
         let _endpoint = `${ENDPOINT}/${brand}`;

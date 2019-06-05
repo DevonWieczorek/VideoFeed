@@ -6,6 +6,7 @@ import Search from "./Search";
 import BrandsList from "./BrandsList";
 import CategoriesList from "./CategoriesList";
 import CollapsiblePanel from "./CollapsiblePanel";
+import ErrorBoundary from "./ErrorBoundary";
 import { getCategoriesByBrand } from '../actions';
 
 class NavItems extends Component {
@@ -16,7 +17,7 @@ class NavItems extends Component {
                 <BrowserView>
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item border-bottom">
-                            <Search />
+                            <ErrorBoundary><Search /></ErrorBoundary>
                         </li>
                     </ul>
                 </BrowserView>
@@ -31,7 +32,9 @@ class NavItems extends Component {
                             id="brands-accordion"
                             title="Brands"
                         >
-                            <BrandsList />
+                            <ErrorBoundary errorContent={<em>Error finding brands.</em>}>
+                                <BrandsList />
+                            </ErrorBoundary>
                         </CollapsiblePanel>
                     </li>
                     <li className="nav-item border-bottom truncate">
@@ -39,9 +42,11 @@ class NavItems extends Component {
                             id="categories-accordion"
                             title="Categories"
                         >
-                            <CategoriesList categories={
-                                this.props.providers[this.props.activeBrand].allCategories
-                            }/>
+                            <ErrorBoundary errorContent={<em>Error finding categories.</em>}>
+                                <CategoriesList categories={
+                                    this.props.providers[this.props.activeBrand].allCategories
+                                }/>
+                            </ErrorBoundary>
                         </CollapsiblePanel>
                     </li>
                 </ul>

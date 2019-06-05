@@ -16,9 +16,14 @@ const INITIAL_STATE = {
     queryString: '',
     partnerLogo: null,
     providers: {
-        youtube: brands.youtube,
-        vimeo: brands.vimeo,
-        metacafe: brands.metacafe
+        pornhub: brands.pornhub,
+        redtube: brands.redtube,
+        tube8: brands.tube8,
+        youporn: brands.youporn,
+        xtube: brands.xtube,
+        spankwire: brands.spankwire,
+        keezmovies: brands.keezmovies,
+        extremetube: brands.extremetube
     }
 }
 

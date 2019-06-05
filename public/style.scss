@@ -260,6 +260,7 @@ nav.navbar li {
 
             #partner-logo {
                 height: 90%;
+                max-height: calc($fixed-header-height - 10px);
             }
         }
 

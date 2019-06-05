@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const BrandsList = () => {
     const renderLinks = () => {
         let links = [];
-        let brands = require('../data/sample/brands.json');
+        let brands = require('../data/brands.json');
 
         for(let b in brands['brands']){
             let brand = brands['brands'][b].brand.toLowerCase();

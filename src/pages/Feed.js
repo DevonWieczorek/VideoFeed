@@ -9,14 +9,15 @@ const Feed = (props) => {
     const renderFeed = (results) => {
         let items = [];
         const MAX = parseInt(process.env.REACT_APP_MAX_RESULTS_PER_PAGE);
-        for(var i = 0; i < MAX && i < results.videos.length; i++){
-            let video = results.videos[i];
+        for(var i = 0; i < MAX && i < results.length; i++){
+            let video = results[i];
             items.push(
                 <TileHeroLink
                     title={video['title']}
                     src={video['default_thumb']}
                     link={video['url']}
                     key={`${video['id']}_${i}`}
+                    srcset={video['thumbs']}
                 >
                     <div className="row">
                         <div className="single-detail col">
