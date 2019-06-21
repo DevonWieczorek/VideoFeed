@@ -7,12 +7,18 @@ class TestPlugin extends Component {
         return data;
     }
 
-    componentDidMount(){
+    // Proofs-of-concept for hook-based plugin architecture
+    listen = () => {
         HookStore.addAction('after_plugin_registry', 'TestPlugin', () => {
             console.log('Log from plugin: after_plugin_registry');
         });
-        console.log('Test plugin loaded.');
+
         HookStore.addFilter( 'search_results', 'TestPlugin', this.logData , 10 );
+    }
+
+    componentDidMount(){
+        console.log('Test plugin loaded.');
+        this.listen();
     }
 
     render(){
