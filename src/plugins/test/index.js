@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import HookStore from '../../Hooks';
 
 class TestPlugin extends Component {
+    // Adds another entry to search data as a proof of filters 
     logData = (data) => {
         data.videos = [...data.videos, data.videos[0]];
         console.log('Manipulated search data from plugin: ', data);
