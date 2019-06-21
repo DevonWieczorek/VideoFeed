@@ -52,12 +52,15 @@ class PluginStore extends Component {
     }
 
     connectPluginsToComponent = () => {
-        // Push imported plugins to array
+        // Push imported plugins to array so we can spread them
         let _plugins = []
-        for(let plugin in plugins) _plugins.push(plugins[plugin]);
+        for(let plugin in plugins){
+            // Need to convert the component function to a React element
+            _plugins.push(React.createElement(plugins[plugin], null, null));
+        }
 
         // Map PluginStore props to each plugin
-        const connectedPlugins = React.Children.map([..._plugins], child => {
+        const connectedPlugins = React.Children.map([..._plugins], (child, i) => {
             return React.cloneElement(child, {...this.props});
         });
 
