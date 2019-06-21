@@ -52,7 +52,7 @@ class PluginStore extends Component {
     }
 
     connectPluginsToComponent = () => {
-        // Push imported plugins to array so we can spread them
+        // Push imported plugins to array so we can iterate over them
         let _plugins = [];
         for(let plugin in plugins){
             // Need to convert the component function to a React element
