@@ -62,9 +62,12 @@ class PluginStore extends Component {
 
         // Map PluginStore props to each plugin
         const connectedPlugins = React.Children.map([..._plugins], child => {
+            console.log();
             return(
-                // Protect our app from broken plugins 
-                <ErrorBoundary errorContent={"Error loading plugin."}>
+                // Protect our app from broken plugins
+                <ErrorBoundary errorContent={() => {
+                        console.log(`Error loading plugin: ${child.type.name}`)
+                }}>
                     {React.cloneElement(child, {...this.props})}
                 </ErrorBoundary>
             );
