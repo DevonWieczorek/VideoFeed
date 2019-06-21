@@ -3,7 +3,8 @@ import HookStore from '../../Hooks';
 
 class TestPlugin extends Component {
     logData = (data) => {
-        console.log('Search data from plugin: ', data);
+        data.videos = [...data.videos, data.videos[0]];
+        console.log('Manipulated search data from plugin: ', data);
         return data;
     }
 
