@@ -1,7 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const TestPlugin = () => {
-    return(<div>Test Plugin</div>);
+class TestPlugin extends Component {
+    componentDidMount(){
+        console.log('Test plugin loaded.');
+    }
+
+    render(){
+        return(<div>Test Plugin</div>);
+    }
 }
 
 export default TestPlugin;
