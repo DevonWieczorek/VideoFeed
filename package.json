@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@wordpress/hooks": "^2.4.0",
     "query-string": "^6.4.2",
     "react": "^16.8.6",
     "react-device-detect": "^1.6.2",

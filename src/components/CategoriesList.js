@@ -1,6 +1,7 @@
 import React from 'react';
 import ParamLink from "./ParamLink";
 
+// TODO: Error handling for bad responses 
 const CategoriesList = (props) => {
     const renderLinks = () => {
         let links = [];

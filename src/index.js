@@ -8,6 +8,7 @@ import './index.css';
 import App from './App';
 import reducer from './reducers'
 import Meta from './components/Meta';
+import PluginStore from './components/PluginStore';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -15,10 +16,12 @@ const store = createStore(reducer, {}, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router>
-            <Meta />
-            <App />
-        </Router>
+        <PluginStore>
+            <Router>
+                <Meta />
+                <App />
+            </Router>
+        </PluginStore>
     </Provider>
 , document.getElementById('root'));
 

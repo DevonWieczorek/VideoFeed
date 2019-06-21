@@ -8,6 +8,7 @@ import CategoriesList from "./CategoriesList";
 import CollapsiblePanel from "./CollapsiblePanel";
 import { getCategoriesByBrand } from '../actions';
 
+// TODO: Wrap nav items in error boundary 
 class NavItems extends Component {
 
     render(){
