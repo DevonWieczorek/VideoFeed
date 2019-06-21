@@ -36,6 +36,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import HookStore from '../Hooks';
+import ErrorBoundary from './ErrorBoundary';
 
 // We'll want to hook our plugins up to all of our actions
 import * as actions from '../actions';
@@ -61,7 +62,12 @@ class PluginStore extends Component {
 
         // Map PluginStore props to each plugin
         const connectedPlugins = React.Children.map([..._plugins], child => {
-            return React.cloneElement(child, {...this.props});
+            return(
+                // Protect our app from broken plugins 
+                <ErrorBoundary errorContent={"Error loading plugin."}>
+                    {React.cloneElement(child, {...this.props})}
+                </ErrorBoundary>
+            );
         });
 
         this.setState({
