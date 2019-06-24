@@ -42,7 +42,6 @@ import ErrorBoundary from './ErrorBoundary';
 import * as actions from '../actions';
 
 // Let's assume plugins are added to/imported from plugins folder just like actions
-// TODO: figure out proper import structure
 import * as plugins from "../plugins";
 
 class PluginStore extends Component {
