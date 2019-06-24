@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import HookStore from '../../Hooks';
 
-export class TestPlugin extends Component {
+export class OtherTestPlugin extends Component {
     // Adds another entry to search data as a proof of filters
     logData = (data) => {
         data.videos = [...data.videos, data.videos[0]];
@@ -24,6 +24,6 @@ export class TestPlugin extends Component {
     }
 
     render(){
-        return(<div>Test Plugin</div>);
+        return(<div>Test Plugin 2</div>);
     }
 }

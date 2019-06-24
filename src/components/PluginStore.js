@@ -43,7 +43,7 @@ import * as actions from '../actions';
 
 // Let's assume plugins are added to/imported from plugins folder just like actions
 // TODO: figure out proper import structure
-import * as plugins from "../plugins/test";
+import * as plugins from "../plugins";
 
 class PluginStore extends Component {
     constructor(props) {
@@ -63,11 +63,10 @@ class PluginStore extends Component {
 
         // Map PluginStore props to each plugin
         const connectedPlugins = React.Children.map([..._plugins], child => {
-            console.log();
             return(
                 // Protect our app from broken plugins
                 <ErrorBoundary errorContent={() => {
-                        console.log(`Error loading plugin: ${child.type.name}`)
+                    console.log(`Error loading plugin: ${child.type.name}`)
                 }}>
                     {React.cloneElement(child, {...this.props})}
                 </ErrorBoundary>
