@@ -13,8 +13,9 @@ import PluginStore from './components/PluginStore';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(reducer, {}, applyMiddleware(ReduxThunk));
+const rootElement = document.getElementById('root');
 
-ReactDOM.render(
+let _app = (
     <Provider store={store}>
         <PluginStore>
             <Router>
@@ -23,7 +24,14 @@ ReactDOM.render(
             </Router>
         </PluginStore>
     </Provider>
-, document.getElementById('root'));
+);
+
+if(rootElement.hasChildNodes()){
+    ReactDOM.hydrate(_app, rootElement);
+}
+else{
+    ReactDOM.render(_app, rootElement);
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

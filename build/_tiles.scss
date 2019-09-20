@@ -1,0 +1,84 @@
+/* Tiles */
+.tile {
+    margin: 0.5rem auto;
+    padding: 0;
+
+    .tile-link {
+        cursor: pointer;
+    }
+
+    .tile-hero img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+    .tile-info {
+        padding: 15px;
+
+        .tile-title {
+            padding-bottom: 10px;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 600;
+        }
+
+        .tile-details {
+            font-size: 11px;
+
+            .single-detail:nth-of-type(odd) {
+                padding-right: 5px;
+                text-align: left;
+            }
+
+            .single-detail:nth-of-type(even) {
+                padding-left: 5px;
+                text-align: right;
+            }
+        }
+    }
+}
+
+/* tile hero link */
+.tile-hero-link,
+.tile-hero-link .tile-link,
+.tile-hero-link .tile-link:hover {
+    color: $main-color;
+    text-decoration-color: $main-color;
+    text-decoration: none;
+}
+
+.tile-hero-link .tile-title {
+    color: $main-brand-color;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-color: $main-brand-color;
+    }
+}
+
+@media all and (min-width: $breakpoint-sm) and (max-width: ($breakpoint-lg - 1px)) {
+    .tile {
+        &.col-md-6,
+        &.col-sm-6 {
+            max-width: 48.5%;
+        }
+    }
+}
+
+@media all and (min-width: $breakpoint-lg) {
+    .tile {
+        &.col-lg-4 {
+            max-width: 33%;
+        }
+    }
+}
+
+@media all and (min-width: $breakpoint-xl) {
+    .tile {
+        &.col-xl-3 {
+            max-width: 24%;
+        }
+    }
+}

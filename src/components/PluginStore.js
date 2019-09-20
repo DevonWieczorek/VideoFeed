@@ -1,5 +1,4 @@
-/**
-* This component is build under the assumption that your file structure is as follows:
+/** * This component is build under the assumption that your file structure is as follows:
 * /
 * index.js
 * app.js
