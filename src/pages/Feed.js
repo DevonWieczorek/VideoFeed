@@ -34,6 +34,8 @@ const Feed = (props) => {
         <>
             {(props.results) ? renderFeed(props.results) : null}
 
+            {window.scroll(0,0)}
+
             {(props.results) ?
                 <center className="clear">
                     <Pagination
